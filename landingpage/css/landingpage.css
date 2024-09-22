@@ -5,6 +5,11 @@
     font-family: 'Kanit', sans-serif;
 }
 
+body {
+    overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
+    margin: 0; /* Remove margens que podem causar o scroll */
+}
+
 .message {
     color: white; /* Cor do texto */
     font-size: 2rem; /* Tamanho do texto */
@@ -27,6 +32,31 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.nextcircuit {
+    display: grid;
+    place-items: center; 
+    width: 100%;
+    height: 100vh; /* Mantém a altura da tela */
+
+}
+
+.nextcircuit img {
+    width: 100%;
+    height: 100%; /* Define a altura como 100% do contêiner */
+}
+
+.race {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.race img{
+    width: 100%;
+    height: 100vh;
 }
 
 .giflanding{
@@ -52,23 +82,100 @@
 
 .menu {
     position: absolute;
-    top: 20px; /* Ajuste a posição vertical conforme necessário */
+    top: 20px;
     left: 50%;
-    transform: translateX(-50%); /* Centraliza o menu horizontalmente */
+    transform: translateX(-50%);
     display: flex;
-    gap: 120px; /* Espaçamento entre os itens do menu */
-    z-index: 10; /* Certifique-se de que o menu esteja acima do conteúdo */
+    gap: 120px;
+    z-index: 10;
 }
 
 .menu a {
-    color: white; /* Cor do texto do menu */
+    color: white;
     font-size: 2rem;
-    text-decoration: none; /* Remove sublinhado */
-    padding: 10px 15px; /* Espaçamento interno */
-    transition: color 0.3s; /* Efeito ao passar o mouse */
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s;
     white-space: nowrap;
 }
 
 .menu a:hover {
-    color: #ff4b4b; /* Muda a cor ao passar o mouse */
+    color: #ff4b4b;
+}
+
+.login a {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.3s ;
+}
+
+.login a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+
+/* Responsividade para tablets (telas menores que 768px) */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: row;
+        gap: 30px; /* Reduz o espaçamento entre os itens para caber na tela */
+    }
+
+    .menu a {
+        font-size: 1.0rem;
+        padding: 11px 12px;
+    }
+
+    .login a {
+        font-size: 1.1rem;
+        top: 60px; /* Desce o login um pouco mais para evitar amontoar com o menu */
+    }
+
+    .giflanding {
+        width: 25%;
+        height: 25%;
+    }
+
+
+}
+
+/* Responsividade para mobile (telas menores que 480px) */
+@media (max-width: 480px) {
+    .menu {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .menu a {
+        font-size: 1.03rem;
+        padding: 12px 10px;
+    }
+
+    .login a {
+        font-size: 1rem;
+        top: 70px; /* Desce ainda mais o login para telas pequenas */
+    }
+
+    .message {
+        font-size: 1.6rem;
+    }
+
+    .giflanding {
+        width: 35%;
+        height: 35%;
+    }
 }
