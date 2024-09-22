@@ -7,13 +7,13 @@
 }
 
 body {
-    background-color: #040405;
+    background-color: #11111e;
     font-family: 'Kanit', sans-serif;
     width: 100%;
     min-height: 100%;
     color: #fff;
+    overflow-y: overlay;
 }
-
 /* Scrolbar noticias */
 
 ::-webkit-scrollbar{
@@ -30,11 +30,11 @@ body {
     border-radius: 100px;
 }
 
-.noticiasPrincipais .right .noticiasRecentes .noticias::-webkit-scrollbar{
+.noticiasGerais .right .noticiasRecentes .noticias::-webkit-scrollbar{
     width: 6px;
 }
 
-.noticiasPrincipais .right .noticiasRecentes .noticias::-webkit-scrollbar-thumb{
+.noticiasGerais  .right .noticiasRecentes .noticias::-webkit-scrollbar-thumb{
     background-color: #777;
 }
 
@@ -46,7 +46,14 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 20px 50px;
+    padding: 8px 50px;
+    background-color: #0d0d17;
+    box-shadow: 10px 10px 20px rgba(3, 3, 4, 1);
+    transition: 0.3s;
+}
+.header.sticky{
+    padding-block: 10px;
+    box-shadow: inset 0 -1.5px 3px rgba(255,255,255,0.3);
 }
 
 .logo{
@@ -62,6 +69,24 @@ body {
 
 nav ul{
     display: flex;
+}
+
+nav div.bar{
+    display: none;
+    position: absolute;
+    right: 80px;
+    margin-top: -10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+nav div.bar.active .open{
+    display: none;
+}
+nav div.bar .close{
+    display: none;
+}
+nav div.bar.active .close{
+    display: initial;
 }
 
 nav ul li{
@@ -89,37 +114,45 @@ nav ul li a{
     letter-spacing: 1px;
 }
 
+nav div.bar i {
+    font-size: 30px;
+    color: #fff;
+}
+
+
 /* últimas noticias */
 
-.noticiasPrincipais{
+.noticiasGerais {
     padding: 100px 50px 50px;
     width: 100%;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
 }
 
-.noticiasPrincipais .left{
+.noticiasGerais  .left{
     padding: 10px 30px;
 }
 
-.noticiasPrincipais .left > .title{
+.noticiasGerais  .left > .title{
     font-size: 20px;
     padding: 15px;
     text-align: center;
 
 }
 
-.noticiasPrincipais .left .img{
+.noticiasGerais  .left .img{
     width: 100%;
-    height: 400px;
+    height: 500px;
     background-color: #a04;
+    box-shadow: 10px 10px 20px rgba(3, 3, 4, 1);
+    border-radius: 2%;
 }
 
-.noticiasPrincipais .left .text{
+.noticiasGerais  .left .text{
     padding: 20px 15px 10px;
 }
 
-.noticiasPrincipais .left .text .title h2{
+.noticiasGerais  .left .text .title h2{
     font-size: 25px;
     letter-spacing: 1px;
     display: inline;
@@ -127,12 +160,12 @@ nav ul li a{
     font-family: 'Kanit', sans-serif;
 }
 
-.noticiasPrincipais .left .text .title h2:hover{
+.noticiasGerais  .left .text .title h2:hover{
     text-decoration: underline;
 }
 
 
-.noticiasPrincipais .left .text .descricao{
+.noticiasGerais  .left .text .descricao{
     font-size: 15px;
     margin-top: 10px;
     color: #aaa;
@@ -141,19 +174,19 @@ nav ul li a{
 
 /* Principais noticias */
 
-.noticiasPrincipais .right{
+.noticiasGerais .right{
     padding: 10px;
     width: 1005;
     height: 500px;
 }
 
-.noticiasPrincipais .right > .title{
+.noticiasGerais .right > .title{
     font-size: 20px;
     padding: 15px;
     text-align: center;
 }
 
-.noticiasPrincipais .right .noticiasRecentes{
+.noticiasGerais .right .noticiasRecentes{
     padding: 7px;
     height: 85%;
     border: 1px solid #fff;
@@ -161,27 +194,286 @@ nav ul li a{
     overflow-y: scroll;
 }
 
-.noticiasPrincipais .right .noticiasRecentes .noticias{
+.noticiasGerais .right .noticiasRecentes .noticias{
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.noticiasPrincipais .right .noticiasRecentes .noticias .img{
+.noticiasGerais .right .noticiasRecentes .noticias .img{
     width: 170px;
     height: 120px;
+    max-height: 120px;
+    min-height: 90px;
     background-color: #a04;
+    box-shadow: 10px 10px 20px rgba(3, 3, 4, 1);
+    border-radius: 2%;
 }
 
-.noticiasPrincipais .right .noticiasRecentes .noticias .text{
-    margin: 10px;
+.noticiasGerais .right .noticiasRecentes .noticias .img img{
+    width: 100%;
+    height: 100%;
 }
 
-.noticiasPrincipais .right .noticiasRecentes .noticias .text .title{
+.noticiasGerais .right .noticiasRecentes .noticias .text{
+    margin-inline: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.noticiasGerais .right .noticiasRecentes .noticias .text .title:hover{
     cursor: pointer;
-}
-
-.noticiasPrincipais .right .noticiasRecentes .noticias .text .title:hover {
     text-decoration: underline;
 }
+
+.noticiasGerais .right .noticiasRecentes .noticias .text .title a{
+    text-decoration: none;
+}
+
+.noticiasGerais .right .noticiasRecentes .noticias .text .title a p{
+    color: #fff;
+    display: inline;
+}
+
+.noticiasGerais .right .noticiasRecentes .noticias .text .title a p:hover{
+    text-decoration: underline;
+}
+
+/* footer */
+footer{
+    background-color: #0d0d17;
+    box-shadow: 10px 10px 20px rgba(3, 3, 4, 1);
+}
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px ;
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding:  10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0,9;
+}
+/* Efeito nos icones */
+.socialIcons a:hover{
+    background-color: #111;
+    transition: 0.5s;
+}
+.socialIcons a:hover i{
+    color: rgb(130, 130, 130);
+    transition: 0.3s;
+}
+.footerNav{
+    margin: 30px 0;
+}
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.footerNav ul li:hover{
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+.footerNav ul li a{
+    color:white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+
+
+/* responsividade */
+
+@media (max-width: 1024px) {
+    .logo {
+        font-size: 35px;
+    }
+    
+
+    .noticiasGerais .left {
+        padding: 10px 0px;
+    }
+
+    .noticiasGerais .right .noticiasRecentes .noticias .img {
+        width: 150px;
+    }
+
+    .noticiasGerais .right .noticiasRecentes .noticias .text .title a p {
+        font-size: 14px;
+    }
+
+    .header {
+        padding: 10px 20px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+        padding: 0 5px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    /* Cabeçalho e menu */
+    nav div.bar{
+        display: block;
+        right: 50px;
+    }
+    .logo {
+        font-size: 28px;
+    }
+
+    .header {
+        padding: 10px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        opacity: 0;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        background-color: #11111e;
+        top: 60px;
+        left: 0px;
+        right: 0px;
+        padding: 20px;
+        z-index: 1000;
+        border-radius: 5px;
+        pointer-events: none;
+        align-items: center;
+        transition: 0.3s;
+        box-shadow: 10px 20px 20px rgba(3, 3, 4, 1);
+    }
+
+    nav div.bar{
+        display: flex;
+        position: absolute;
+        right: 80px;
+        margin-top: -35px;
+        left: 80%;
+        font-size: 25px;
+        cursor: pointer;
+        transition: 0.1s;
+    }
+
+    nav ul.activeMenu {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    nav div.bar.active .open{
+        display: none;
+    }
+    nav div.bar .close{
+        display: none;
+    }
+    nav div.bar.active .close{
+        display: initial;
+    }
+
+    nav ul li {
+        list-style: none;
+        margin: 0 15px;
+        padding: 0 10px;
+        border-left: 1px solid #fff0;
+        border-right: 1px solid #fff0;
+        transition: 0.3s;
+    }
+
+    nav ul li:hover {
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+    }
+
+    nav ul li a{
+        text-decoration: none;
+        color: #fff;
+        letter-spacing: 1px;
+    }
+
+    
+
+    /* Layout das notícias */
+    .noticiasGerais {
+        grid-template-columns: 1fr;
+        padding: 80px 20px 20px;
+    }
+
+    .noticiasGerais .right {
+        height: auto;
+    }
+
+    .noticiasGerais .right .noticiasRecentes {
+        height: auto;
+        max-height: 400px;
+    }
+
+    .noticiasGerais .left .img {
+        height: 300px;
+    }
+
+    .noticiasGerais .right .noticiasRecentes .noticias {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .noticiasGerais .right .noticiasRecentes .noticias .img {
+        width: 100%;
+        height: 200px;
+    }
+
+    /* Textos e descrições */
+    .noticiasGerais .left .text .title h2 {
+        font-size: 20px;
+    }
+
+    .noticiasGerais .left .text .descricao {
+        font-size: 14px;
+    }
+
+    /* Padding dos elementos */
+    .noticiasGerais .left {
+        padding: 0;
+    }
+
+    .noticiasGerais .right {
+        padding: 0;
+    }
+
+    /* Footer */
+
+    .footerNav ul{
+        flex-direction: column;
+    } 
+    .footerNav ul li{
+        width:100%;
+        text-align: center;
+        margin: 10px;
+    }
+    .socialIcons a{
+        padding: 8px;
+        margin: 4px;
+    }
+} 
+
+    
