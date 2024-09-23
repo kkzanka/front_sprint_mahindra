@@ -9,14 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let claridade = false;
 
-
-    nextCircuit.classList.add('hidden');
-    race.classList.add('hidden');
+    // Adiciona a classe noscroll ao body ao carregar
     document.body.classList.add('noscroll');
 
     overlay.addEventListener('click', function() {
         if (!claridade) {
-
             overlay.style.backgroundColor = 'rgba(255, 255, 255, 0)';
             message.style.display = 'none';
             giflanding.style.display = 'none';
@@ -27,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Mostrar as imagens e remover a classe do body
             nextCircuit.classList.remove('hidden');
             race.classList.remove('hidden');
-            document.body.classList.remove('noscroll');
+            document.body.classList.remove('noscroll'); // Remover classe para permitir scroll
 
         } else {
             // Escurece a tela e mostra a mensagem e o GIF
@@ -41,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Ocultar as imagens e adicionar a classe no body
             nextCircuit.classList.add('hidden');
             race.classList.add('hidden');
-            document.body.classList.add('noscroll');
+            document.body.classList.add('noscroll'); // Adicionar classe para bloquear scroll
         }
         claridade = !claridade; // Alterna o estado
     });
