@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const message = document.querySelector('.message');
     const giflanding = document.querySelector('.giflanding');
     const menu = document.getElementById('menu');
-    const login = document.querySelector('.login');
     const nextCircuit = document.querySelector('.nextcircuit');
     const race = document.querySelector('.race');
     
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
             giflanding.style.display = 'none';
             overlay.style.cursor = 'default';
             menu.style.display = 'flex';
-            login.style.display = 'block';
 
             
             nextCircuit.classList.remove('hidden');
@@ -33,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
             giflanding.style.display = 'block';
             overlay.style.cursor = 'pointer';
             menu.style.display = 'none';
-            login.style.display = 'none';
 
             
             nextCircuit.classList.add('hidden');
