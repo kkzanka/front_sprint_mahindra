@@ -117,6 +117,11 @@ body {
     color: rgb(0, 98, 196);
 }
 
+.noscroll {
+    overflow: hidden;
+}
+
+
 /* Seções Next Circuit e Race */
 .nextcircuit,
 .race {
