@@ -27,6 +27,13 @@ body {
 }
 
 /* Imagem de Tela Cheia */
+.message {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .fullscreen-image {
     width: 100vw;
     height: 100vh;
@@ -39,7 +46,9 @@ body {
 }
 
 .fullscreen-image img {
-    display: none; /* Oculta a tag img se estiver usando background-image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .overlay {
@@ -55,13 +64,6 @@ body {
     flex-direction: column;
     transition: background-color 0.9s;
     cursor: pointer;
-}
-
-.message {
-    color: white;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 .giflanding {
