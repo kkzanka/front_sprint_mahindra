@@ -53,9 +53,9 @@ function changeImageBasedOnScreenWidth() {
 
     // Verifica o tamanho da tela
     if (window.innerWidth < 768) {
-        image.src = "landingpage/img/giflanding.gif"; // Imagem para telas menores que 768px
+        image.src = "landingpage/img/carDesktop.jpg"; // Imagem para telas menores que 768px
     } else {
-        image.src = "landingpage/img/carDesktop.jpg"; // Imagem para telas maiores que 768px
+        image.src = "landingpage/img/giflanding.gif"; // Imagem para telas maiores que 768px
     }
 }
 
