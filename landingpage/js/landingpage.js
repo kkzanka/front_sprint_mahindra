@@ -1,3 +1,24 @@
+// Função para alterar a imagem com base no tamanho da tela
+function changeImageBasedOnScreenWidth() {
+    const image = document.querySelector('.fullscreen-image img');
+
+    // Verifica o tamanho da tela
+    if (window.innerWidth < 768) {
+        image.src = "landingpage/img/imgCarMobile.jpg"; // Imagem para telas menores que 768px
+    } else {
+        image.src = "landingpage/img/carDesktop.jpg"; // Imagem para telas maiores que 768px
+    }
+}
+
+window.onload = () => {
+    changeImageBasedOnScreenWidth();
+    showMenuOnClick();
+};
+// Chama a função sempre que a janela é redimensionada
+window.onresize = changeImageBasedOnScreenWidth;
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.querySelector('.overlay');
     const message = document.querySelector('.message');

@@ -1,3 +1,4 @@
+/* Estilos Gerais */
 * {
     margin: 0;
     padding: 0;
@@ -6,78 +7,39 @@
 }
 
 body {
-    overflow-x: hidden; /* Esconde a barra de rolagem horizontal */
-    margin: 0; /* Remove margens que podem causar o scroll */
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    margin: 0; /* Remove margens que podem causar scroll */
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 8px;
-    background-color: black
+    background-color: black;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
     background-color: transparent;
     padding: 2px;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background-color: wheat;
     border-radius: 100px;
 }
 
-.message {
-    color: white; /* Cor do texto */
-    font-size: 2rem; /* Tamanho do texto */
-    text-align: center; /* Centraliza o texto */
-    display: block; /* Certifique-se de que a mensagem possa ser mostrada */
-}
-
-
+/* Imagem de Tela Cheia */
 .fullscreen-image {
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
     position: relative;
+    background-size: cover; /* Adapta a imagem ao tamanho da tela */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../img/carDesktop.jpg'); /* Define a imagem padrão para telas maiores */
 }
 
 .fullscreen-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.nextcircuit {
-    display: grid;
-    place-items: center; 
-    width: 100%;
-    height: 100vh; /* Mantém a altura da tela */
-
-}
-
-.nextcircuit img {
-    width: 100%;
-    height: 100%; /* Define a altura como 100% do contêiner */
-}
-
-.race {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    height: 100vh;
-}
-
-.race img{
-    width: 100%;
-    height: 100vh;
-}
-
-.giflanding{
-    width: 18%;
-    height: 18%;
-    position: relative;
+    display: none; /* Oculta a tag img se estiver usando background-image */
 }
 
 .overlay {
@@ -86,15 +48,34 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escurecido */
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     transition: background-color 0.9s;
     cursor: pointer;
-    flex-direction: column;
 }
 
+.message {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.giflanding {
+    width: 18%;
+    height: 18%;
+    position: relative;
+}
+
+.giflanding img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Menu Centralizado */
 .menu {
     position: absolute;
     top: 20px;
@@ -118,6 +99,7 @@ body {
     color: rgb(0, 98, 196);
 }
 
+/* Login no Canto Superior Direito */
 .login a {
     position: absolute;
     top: 20px;
@@ -126,38 +108,44 @@ body {
     color: white;
     text-decoration: none;
     font-size: 1.3rem;
-    transition: color 0.3s ;
+    transition: color 0.3s;
 }
 
 .login a:hover {
-    text-decoration: none;
     color: rgb(0, 98, 196);
 }
 
-.hidden {
-    display: none;
+/* Seções Next Circuit e Race */
+.nextcircuit,
+.race {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100vh;
 }
 
-.noscroll {
-    overflow: hidden;
+.nextcircuit img,
+.race img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
 }
 
-
-/* Responsividade para tablets (telas menores que 768px) */
+/* Responsividade para Tablets (telas menores que 768px) */
 @media (max-width: 768px) {
     .menu {
         flex-direction: row;
-        gap: 30px; /* Reduz o espaçamento entre os itens para caber na tela */
+        gap: 30px; /* Ajuste do espaçamento entre os itens */
     }
 
     .menu a {
-        font-size: 1.0rem;
-        padding: 11px 12px;
+        font-size: 1.2rem;
+        padding: 8px 10px;
     }
 
     .login a {
         font-size: 1.1rem;
-        top: 60px; /* Desce o login um pouco mais para evitar amontoar com o menu */
+        top: 50px; /* Ajusta a posição do login para evitar sobreposição */
     }
 
     .giflanding {
@@ -165,39 +153,48 @@ body {
         height: 25%;
     }
 
-    .fullscreen-image {
-        overflow-x: hidden;
-    }
-
-}
-
-/* Responsividade para mobile (telas menores que 480px) */
-@media (max-width: 480px) {
-    .menu {
-        flex-direction: row;
-        gap: 20px;
-    }
-
-    .menu a {
-        font-size: 1.03rem;
-        padding: 12px 10px;
-    }
-
-    .login a {
-        font-size: 1rem;
-        top: 70px; /* Desce ainda mais o login para telas pequenas */
-    }
-
     .message {
         font-size: 1.6rem;
     }
 
+    .fullscreen-image {
+        background-image: url('../imgMobile/imgCarMobile.jpg'); /* Imagem de fundo para tablets */
+    }
+}
+
+/* Responsividade para Mobile (telas menores que 480px) */
+@media (max-width: 480px) {
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 1.1rem;
+        padding: 8px 5px;
+    }
+
+    .login a {
+        font-size: 1rem;
+        top: 60px;
+    }
+
+    .message {
+        font-size: 1.4rem;
+    }
+
     .giflanding {
-        width: 35%;
-        height: 35%;
+        width: 40%;
+        height: 40%;
     }
 
     .fullscreen-image {
-        overflow-x: hidden;
+        background-image: url('../imgMobile/imgCarMobile.jpg'); /* Imagem de fundo para mobile */
+    }
+
+    .nextcircuit img,
+    .race img {
+        width: 100%;
+        height: auto; /* Ajusta a altura das imagens para telas menores */
     }
 }
