@@ -122,14 +122,24 @@ nav div.bar i {
     color: #fff;
 }
 
-/* Tabela de Classificação */
+/* Tabela de Classificação pilotos */
+
 .table-container-pilotos {
-    width: 100%;
-    max-width: 800px;
-    margin: 50px auto; /* Margin ajustado para centralizar */
+    grid-column: 1; /* A tabela ficará na primeira coluna */
     background-color: #1b1b32;
     border-radius: 10px;
+    width: 800px;
     overflow-x: auto;
+    margin: 0; /* Remover margem lateral */
+    max-width: 100%; /* Certificar que a largura se ajusta */
+}
+
+.grid-container-pilotos {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* 1 parte para a esquerda (tabela), 3 partes para o restante */
+    gap: 20px; /* Espaçamento entre colunas */
+    width: 100%;
+    padding: 20px;
 }
 
 .table-container-pilotos h1 {
@@ -151,7 +161,7 @@ nav div.bar i {
     border-bottom: 1px solid #dddddd;
 }
 
-.table-container th {
+.table-container-pilotos th {
     background-color: #141425;
     text-align: center;
 }
