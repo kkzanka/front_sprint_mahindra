@@ -123,7 +123,7 @@ nav div.bar i {
 }
 
 /* Tabela de Classificação */
-.table-container {
+.table-container-pilotos {
     width: 100%;
     max-width: 800px;
     margin: 50px auto; /* Margin ajustado para centralizar */
@@ -132,7 +132,7 @@ nav div.bar i {
     overflow-x: auto;
 }
 
-.table-container h1 {
+.table-container-pilotos h1 {
     text-align: center;
     padding: 20px;
     font-size: 1.5em;
@@ -140,12 +140,12 @@ nav div.bar i {
     border-bottom: 2px solid wheat;
 }
 
-.table-container table {
+.table-container-pilotos table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.table-container th, td {
+.table-container-pilotos th, td {
     padding: 15px;
     text-align: center;
     border-bottom: 1px solid #dddddd;
@@ -156,41 +156,41 @@ nav div.bar i {
     text-align: center;
 }
 
-.table-container tr{
+.table-container-pilotos tr{
     color: wheat;
 }
 
-.table-container td:nth-child(1), 
-.table-container td:nth-child(4) {
+.table-container-pilotos td:nth-child(1), 
+.table-container-pilotos td:nth-child(4) {
     text-align: center;
 }
 
-.table-container tr:hover {
+.table-container-pilotos tr:hover {
     background-color: #141425;
 }
 
 /* Barra de rolagem customizada */
-.table-container {
+.table-container-pilotos {
     max-height: 550px;
     overflow-y: auto;
 }
 
-.table-container::-webkit-scrollbar {
+.table-container-pilotos::-webkit-scrollbar {
     width: 12px;
 }
 
-.table-container::-webkit-scrollbar-track {
+.table-container-pilotos::-webkit-scrollbar-track {
     background: #141425;
     border-radius: 10px;
 }
 
-.table-container::-webkit-scrollbar-thumb {
+.table-container-pilotos::-webkit-scrollbar-thumb {
     background-color: wheat;
     border-radius: 10px;
     border: 3px solid #141425;
 }
 
-.table-container::-webkit-scrollbar-thumb:hover {
+.table-container-pilotos::-webkit-scrollbar-thumb:hover {
     background-color: wheat;
 }
 
