@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let claridade = false;
 
-    // Adiciona a classe noscroll ao body ao carregar
+    
     document.body.classList.add('noscroll');
 
     overlay.addEventListener('click', function() {
@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
             menu.style.display = 'flex';
             login.style.display = 'block';
 
-            // Mostrar as imagens e remover a classe do body
+            
             nextCircuit.classList.remove('hidden');
             race.classList.remove('hidden');
-            document.body.classList.remove('noscroll'); // Remover classe para permitir scroll
+            document.body.classList.remove('noscroll');
 
         } else {
-            // Escurece a tela e mostra a mensagem e o GIF
+            
             overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
             message.style.display = 'block';
             giflanding.style.display = 'block';
@@ -35,34 +35,34 @@ document.addEventListener('DOMContentLoaded', function() {
             menu.style.display = 'none';
             login.style.display = 'none';
 
-            // Ocultar as imagens e adicionar a classe no body
+            
             nextCircuit.classList.add('hidden');
             race.classList.add('hidden');
-            document.body.classList.add('noscroll'); // Adicionar classe para bloquear scroll
+            document.body.classList.add('noscroll');
         }
-        claridade = !claridade; // Alterna o estado
+        claridade = !claridade;
     });
 });
 
-// Função para alterar a imagem com base no tamanho da tela
+
 function changeImageBasedOnScreenWidth() {
     const image = document.querySelector('.fullscreen-image img');
 
     // Verifica o tamanho da tela
     if (window.innerWidth < 768) {
-        image.src = "landingpage/img/giflanding.gif"; // Imagem para telas menores que 768px
+        image.src = "landingpage/img/giflanding.gif";
     } else {
-        image.src = "landingpage/img/giflanding.gif"; // Imagem para telas maiores que 768px
+        image.src = "landingpage/img/giflanding.gif";
     }
 }
 
-// Chama a função quando a página é carregada
+
 window.onload = () => {
     changeImageBasedOnScreenWidth();
     showMenuOnClick();
 };
 
-// Chama a função sempre que a janela é redimensionada
+
 window.onresize = changeImageBasedOnScreenWidth;
 
 
