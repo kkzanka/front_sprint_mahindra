@@ -89,7 +89,7 @@ body {
 }
 
 .menu a {
-    color: white;
+    color: wheat;
     font-size: 2rem;
     text-decoration: none;
     padding: 10px 15px;
@@ -107,7 +107,7 @@ body {
     top: 20px;
     right: 20px;
     padding: 10px 20px;
-    color: white;
+    color: wheat;
     text-decoration: none;
     font-size: 1.3rem;
     transition: color 0.3s;

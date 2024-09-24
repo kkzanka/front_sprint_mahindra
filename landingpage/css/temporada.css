@@ -15,10 +15,10 @@ body {
     font-family: 'Kanit', sans-serif;
     width: 100%;
     overflow-y: overlay;
-    justify-content: center;  /* Centraliza horizontalmente */
-    align-items: center;      /* Centraliza verticalmente */
-    padding-top: 80px;        /* Evita sobreposição com a navbar fixa */
-}
+    justify-content: center;   
+    align-items: center;   
+    padding-top: 80px;      
+}/*
 
 /* scrollbar */
 
@@ -120,183 +120,34 @@ nav ul li a {
 
 nav div.bar i {
     font-size: 30px;
-    color: #fff;
+    color: wheat;
 }
 /* Tabela de Classificação-GRID  */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 3fr; 
-    grid-template-rows: 80px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
     gap: 30px; 
     width: 100%;
     padding: 20px;
 }
 
+.table-container {
+    grid-column: 1 / -1;
+  }
+  
+
 /* Tabela de Classificação pilotos */
 
 .table-container-pilotos {
-    grid-column: 1; 
-    grid-row: 2;
     background-color: #1b1b32;
     border-radius: 10px;
-    width: 800px;
     overflow-x: auto;
     margin: 0; 
-    max-width: 100%; 
 }
 
-.table-container-pilotos h1 {
-    text-align: center;
-    padding: 20px;
-    font-size: 1.5em;
-    color: wheat;
-    border-bottom: 2px solid wheat;
-}
-
-.table-container-pilotos table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.table-container-pilotos th, td {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #dddddd;
-}
-
-.table-container-pilotos th {
-    background-color: #141425;
-    text-align: center;
-}
-
-.table-container-pilotos tr{
-    color: wheat;
-}
-
-.table-container-pilotos td:nth-child(1), 
-.table-container-pilotos td:nth-child(4) {
-    text-align: center;
-}
-
-.table-container-pilotos tr:hover {
-    background-color: #141425;
-}
-
-/* Barra de rolagem customizada */
-.table-container-pilotos {
-    max-height: 550px;
-    overflow-y: auto;
-}
-
-.table-container-pilotos::-webkit-scrollbar {
-    width: 12px;
-}
-
-.table-container-pilotos::-webkit-scrollbar-track {
-    background: #141425;
-    border-radius: 10px;
-}
-
-.table-container-pilotos::-webkit-scrollbar-thumb {
-    background-color: wheat;
-    border-radius: 10px;
-    border: 3px solid #141425;
-}
-
-.table-container-pilotos::-webkit-scrollbar-thumb:hover {
-    background-color: wheat;
-}
-
-/* Tabela de Classificação Equipes */
-
-.table-container-equipes {
-    grid-column: 2; 
-    grid-row: 2;
-    background-color: #1b1b32;
-    border-radius: 10px;
-    width: 500px;
-    height: 500px;
-    overflow-x: auto;
-    margin: 0; 
-    max-width: 100%; 
-}
-
-.table-container-equipes h1 {
-    text-align: center;
-    padding: 20px;
-    font-size: 1.5em;
-    color: wheat;
-    border-bottom: 2px solid wheat;
-}
-
-.table-container-equipes table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.table-container-equipes th, td {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #dddddd;
-}
-
-.table-container-equipes th {
-    background-color: #141425;
-    text-align: center;
-}
-
-.table-container-equipes tr{
-    color: wheat;
-}
-
-.table-container-equipes td:nth-child(1), 
-.table-container-equipes td:nth-child(4) {
-    text-align: center;
-}
-
-.table-container-equipes tr:hover {
-    background-color: #141425;
-}
-
-/* Barra de rolagem customizada */
-.table-container-equipes {
-    max-height: 550px;
-    overflow-y: auto;
-}
-
-.table-container-equipes::-webkit-scrollbar {
-    width: 12px;
-}
-
-.table-container-equipes::-webkit-scrollbar-track {
-    background: #141425;
-    border-radius: 10px;
-}
-
-.table-container-equipes::-webkit-scrollbar-thumb {
-    background-color: wheat;
-    border-radius: 10px;
-    border: 3px solid #141425;
-}
-
-.table-container-equipes::-webkit-scrollbar-thumb:hover {
-    background-color: wheat;
-}
-
-/* Tabela de Corridas-locais */
-
-.table-container-corridas {
-    grid-column: 3; 
-    grid-row: 2;
-    background-color: #1b1b32;
-    border-radius: 10px;
-    width: 450px;
-    height: 525px;
-    overflow-x: auto;
-    margin: 0; 
-    max-width: 100%; 
-}
-
+.table-container-pilotos h1,
+.table-container-equipes h1,
 .table-container-corridas h1 {
     text-align: center;
     padding: 20px;
@@ -305,58 +156,93 @@ nav div.bar i {
     border-bottom: 2px solid wheat;
 }
 
+.table-container-pilotos table,
+.table-container-equipes table,
 .table-container-corridas table {
     width: 100%;
     border-collapse: collapse;
 }
 
+.table-container-pilotos th, td,
+.table-container-equipes th, td,
 .table-container-corridas th, td {
     padding: 15px;
     text-align: center;
     border-bottom: 1px solid #dddddd;
 }
 
+.table-container-pilotos th,
+.table-container-equipes th,
 .table-container-corridas th {
     background-color: #141425;
     text-align: center;
 }
 
+.table-container-pilotos tr,
+.table-container-equipes tr,
 .table-container-corridas tr{
     color: wheat;
 }
 
-.table-container-corridas td:nth-child(1), 
-.table-container-corridas td:nth-child(4) {
-    text-align: center;
-}
-
+.table-container-pilotos tr:hover,
+.table-container-equipes tr:hover,
 .table-container-corridas tr:hover {
     background-color: #141425;
 }
 
 /* Barra de rolagem customizada */
+.table-container-pilotos,
+.table-container-equipes,
 .table-container-corridas {
     max-height: 550px;
     overflow-y: auto;
 }
 
+.table-container-pilotos::-webkit-scrollbar,
+.table-container-equipes::-webkit-scrollbar,
 .table-container-corridas::-webkit-scrollbar {
     width: 12px;
 }
 
+.table-container-pilotos::-webkit-scrollbar-track,
+.table-container-equipes::-webkit-scrollbar-track,
 .table-container-equipes::-webkit-scrollbar-track {
     background: #141425;
     border-radius: 10px;
 }
 
+.table-container-pilotos::-webkit-scrollbar-thumb,
+.table-container-equipes::-webkit-scrollbar-thumb,
 .table-container-corridas::-webkit-scrollbar-thumb {
     background-color: wheat;
     border-radius: 10px;
     border: 3px solid #141425;
 }
 
+.table-container-pilotos::-webkit-scrollbar-thumb:hover,
+.table-container-equipes::-webkit-scrollbar-thumb:hover,
 .table-container-corridas::-webkit-scrollbar-thumb:hover {
     background-color: wheat;
+}
+
+/* Tabela de Classificação Equipes */
+
+.table-container-equipes {
+    background-color: #1b1b32;
+    border-radius: 10px;
+    height: 525px;
+    overflow-x: auto;
+    margin: 0; 
+}
+
+
+/* Tabela de Corridas-locais */
+
+.table-container-corridas {
+    background-color: #1b1b32;
+    border-radius: 10px;
+    height: 525px;
+    overflow-x: auto; 
 }
 
 /* bandeiras */
@@ -373,12 +259,12 @@ nav div.bar i {
 /* footer */
 footer{
     width: 100%;
-    background-color: #333; /* cor de fundo, se desejado */
-    color: wheat; /* ou outra cor do tema */
+    background-color: #333;
+    color: wheat; 
     text-align: center;
     padding: 20px 0;
     position: relative;
-    clear: both; /* Garante que o footer fique abaixo de tudo */
+    clear: both; 
     background-color: #0d0d17;
     box-shadow: 10px 10px 20px rgba(3, 3, 4, 1);
 }
@@ -434,3 +320,160 @@ footer{
     opacity: 1;
 }
 
+/* Ajustes para telas com largura acima de 768px */
+@media (min-width: 769px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px; 
+    }
+
+    .table-container-corridas {
+        width: 100%; 
+        grid-column: 1; 
+        grid-row: 1; 
+    }
+
+    .table-container-equipes {
+        width: 100%; 
+        grid-column: 2; 
+        grid-row: 1; 
+    }
+
+    .table-container-pilotos {
+        width: 100%; 
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .header {
+        padding: 15px 40px;
+    }
+
+    .logo {
+        font-size: 35px;
+    }
+
+    nav ul {
+        display: flex;
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0;
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    nav div.bar {
+        display: none; 
+    }
+
+    .footerNav ul {
+        flex-direction: row; 
+    }
+
+    .socialIcons a {
+        padding: 10px;
+        margin: 10px;
+    }
+}
+
+  /* Ajustes para dispositivos com largura máxima de 768px */
+@media (max-width: 768px) {
+    .header {
+      padding: 10px 20px;
+    }
+    .logo {
+      font-size: 20px;
+    }
+    nav ul {
+      opacity: 0;
+      position: absolute;
+      top: 60px;
+      left: 0px;
+      right: 0px;
+      padding: 20px;
+      z-index: 1000;
+      border-radius: 5px;
+      pointer-events: none;
+      align-items: center;
+      transition: 0.3s;
+      box-shadow: 10px 20px 20px rgba(3, 3, 4, 1);
+      background-color: #11111e;
+    }
+    nav div.bar {
+      display: flex;
+      position: absolute;
+      right: 20px;
+      margin-top: -15px;
+      left: 80%;
+      font-size: 20px;
+      cursor: pointer;
+      transition: 0.1s;
+    }
+    nav ul.activeMenu {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .footerNav ul {
+      flex-direction: column;
+    }
+    .footerNav ul li {
+      width: 100%;
+      text-align: center;
+      margin: 10px;
+    }
+    .socialIcons a {
+      padding: 8px;
+      margin: 4px;
+    }
+    .table-container-pilotos, 
+    .table-container-equipes, 
+    .table-container-corridas {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      grid-column: 1; 
+      grid-row: auto;
+    }
+    .grid-container {
+      grid-template-columns: 1fr; 
+    }
+}
+
+/* Ajustes para dispositivos com largura máxima de 480px */
+@media (max-width: 480px) {
+    .header {
+      padding: 10px 10px;
+    }
+    .logo {
+      font-size: 18px;
+    }
+    nav ul {
+      top: 50px;
+    }
+    nav div.bar {
+      right: 10px;
+      margin-top: -15px;
+      font-size: 18px;
+    }
+    .footerNav ul li {
+      margin: 5px;
+    }
+    .socialIcons a {
+      padding: 6px;
+      margin: 2px;
+    }
+    .table-container-pilotos, 
+    .table-container-equipes, 
+    .table-container-corridas {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      grid-column: 1;
+      grid-row: auto;
+    }
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+}
