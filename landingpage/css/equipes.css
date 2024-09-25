@@ -1,14 +1,113 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #11111e;
-    color: wheat;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
+/* Estilos Gerais */
+* {
     margin: 0;
-    height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
 }
+
+body {
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    margin: 0; /* Remove margens que podem causar scroll */
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: black;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    padding: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: wheat;
+    border-radius: 100px;
+}
+/* navbar*/
+
+.header{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px 50px;
+    background-color: #0d0d17;
+    box-shadow: 10px 10px 20px rgba(3, 3, 4, 1);
+    transition: 0.3s;
+}
+.header.sticky{
+    padding-block: 10px;
+    box-shadow: inset 0 -1.5px 3px rgba(255,255,255,0.3);
+}
+
+.logo{
+    font-size: 45px;
+    font-weight: 700;
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.15);
+}
+
+nav ul{
+    display: flex;
+}
+
+nav div.bar{
+    display: none;
+    position: absolute;
+    right: 80px;
+    margin-top: -10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+nav div.bar.active .open{
+    display: none;
+}
+nav div.bar .close{
+    display: none;
+}
+nav div.bar.active .close{
+    display: initial;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 0 15px;
+    padding: 0 10px;
+    border-right: 1px solid #fff0;
+    border-left: 1px solid #fff0;
+    transition: 0.3s;
+}
+
+nav ul li:hover {
+    border-right: 1px solid wheat;
+    border-left: 1px solid wheat;
+    transform: scale(1.2);
+}
+
+a:hover{
+    color: rgb(0, 84, 167);
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: wheat;
+    letter-spacing: 1px;
+}
+
+nav div.bar i {
+    font-size: 30px;
+    color: wheat;
+}
+
+
+/* Equipes */
 
 .container {
     text-align: center;
