@@ -381,25 +381,29 @@ footer{
   /* Ajustes para dispositivos com largura máxima de 768px */
 @media (max-width: 768px) {
     .header {
-      padding: 10px 20px;
+      padding: 20px 20px;
     }
     .logo {
       font-size: 20px;
     }
     nav ul {
-      opacity: 0;
-      position: absolute;
-      top: 60px;
-      left: 0px;
-      right: 0px;
-      padding: 20px;
-      z-index: 1000;
-      border-radius: 5px;
-      pointer-events: none;
-      align-items: center;
-      transition: 0.3s;
-      box-shadow: 10px 20px 20px rgba(3, 3, 4, 1);
-      background-color: #11111e;
+        opacity: 0;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        background-color: #11111e;
+        top: 60px;
+        left: 0px;
+        right: 0px;
+        padding: 20px;
+        z-index: 1000;
+        border-radius: 5px;
+        pointer-events: none;
+        align-items: center;
+        transition: 0.3s;
+        box-shadow: 10px 20px 20px rgba(3, 3, 4, 1);
     }
     nav div.bar {
       display: flex;
@@ -444,18 +448,41 @@ footer{
 /* Ajustes para dispositivos com largura máxima de 480px */
 @media (max-width: 480px) {
     .header {
-      padding: 10px 10px;
+        padding: 20px 20px;
+        flex-direction: column;
+        align-items: flex-start;
     }
     .logo {
       font-size: 18px;
     }
     nav ul {
-      top: 50px;
+        opacity: 0;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        background-color: #11111e;
+        top: 60px;
+        left: 0px;
+        right: 0px;
+        padding: 20px;
+        z-index: 1000;
+        border-radius: 5px;
+        pointer-events: none;
+        align-items: center;
+        transition: 0.3s;
+        box-shadow: 10px 20px 20px rgba(3, 3, 4, 1);
     }
     nav div.bar {
-      right: 10px;
-      margin-top: -15px;
-      font-size: 18px;
+        display: flex;
+        position: absolute;
+        right: 80px;
+        margin-top: -25px;
+        left: 80%;
+        font-size: 25px;
+        cursor: pointer;
+        transition: 0.1s;
     }
     .footerNav ul li {
       margin: 5px;
