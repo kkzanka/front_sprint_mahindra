@@ -440,7 +440,7 @@ footer{
     }
 
     .noticiasGerais .left .img {
-        height: 320px;
+        max-height: auto;
     }
 
     .noticiasGerais .right .noticiasRecentes .noticias {
