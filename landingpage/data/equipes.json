@@ -1,27 +1,42 @@
 [
     {
-        "name": "Mercedes",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/9/9c/Mercedes-AMG_Petronas_Formula_One_Team_logo.png",
-        "description": "A Mercedes-AMG Petronas Formula One Team é uma equipe de Fórmula 1 baseada em Brackley, Inglaterra."
+        "name": "Equipe 1",
+        "logo": "",
+        "description": "Descrição da equipe 1."
     },
     {
-        "name": "Ferrari",
-        "logo": "../img/race.gif",
-        "description": "A Scuderia Ferrari é a equipe de Fórmula 1 da fabricante italiana de automóveis Ferrari."
+        "name": "Equipe 2",
+        "logo": "",
+        "description": "Descrição da equipe 2."
     },
     {
-        "name": "Red Bull Racing",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/e/e7/Red_Bull_Racing_logo.png",
-        "description": "A Red Bull Racing é uma equipe de Fórmula 1 com sede em Milton Keynes, Inglaterra."
+        "name": "Equipe 3",
+        "logo": "",
+        "description": "Descrição da equipe 3."
     },
     {
-        "name": "Alpine",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/0/0b/Alpine_F1_Team_Logo.png",
-        "description": "A Alpine F1 Team é uma equipe de Fórmula 1 que representa a fabricante francesa de automóveis Renault."
+        "name": "Equipe 4",
+        "logo": "",
+        "description": "Descrição da equipe 4."
     },
     {
-        "name": "VASCO",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/0/0b/Alpine_F1_Team_Logo.png",
-        "description": "A Alpine F1 Team é uma equipe de Fórmula 1 que representa a fabricante francesa de automóveis Renault."
+        "name": "Equipe 5",
+        "logo": "",
+        "description": "Descrição da equipe 5."
+    },
+    {
+        "name": "Equipe 6",
+        "logo": "",
+        "description": "Descrição da equipe 6."
+    },
+    {
+        "name": "Equipe 7",
+        "logo": "",
+        "description": "Descrição da equipe 7."
+    },
+    {
+        "name": "Equipe 8",
+        "logo": "",
+        "description": "Descrição da equipe 8."
     }
 ]
