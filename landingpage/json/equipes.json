@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Mercedes",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/9/9c/Mercedes-AMG_Petronas_Formula_One_Team_logo.png",
+        "description": "A Mercedes-AMG Petronas Formula One Team é uma equipe de Fórmula 1 baseada em Brackley, Inglaterra."
+    },
+    {
+        "name": "Ferrari",
+        "logo": "../img/race.gif",
+        "description": "A Scuderia Ferrari é a equipe de Fórmula 1 da fabricante italiana de automóveis Ferrari."
+    },
+    {
+        "name": "Red Bull Racing",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/e/e7/Red_Bull_Racing_logo.png",
+        "description": "A Red Bull Racing é uma equipe de Fórmula 1 com sede em Milton Keynes, Inglaterra."
+    },
+    {
+        "name": "Alpine",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/0/0b/Alpine_F1_Team_Logo.png",
+        "description": "A Alpine F1 Team é uma equipe de Fórmula 1 que representa a fabricante francesa de automóveis Renault."
+    }
+]
