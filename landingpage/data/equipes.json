@@ -1,42 +1,42 @@
 [
     {
-        "name": "Equipe 1",
-        "logo": "",
-        "description": "Descrição da equipe 1."
+        "name": "ABT CUPRA FORMULA E TEAM",
+        "logo": "../imgEquipes/abt-cupra.png",
+        "description": "A ABT CUPRA Formula E Team é uma equipe de automobilismo que compete na Fórmula E, a principal categoria de corridas de carros elétricos. A equipe é uma parceria entre a ABT Sportsline, com tradição em competições de alto nível, e a CUPRA, a marca esportiva da SEAT. Juntas, elas combinam expertise técnica e inovação para disputar o campeonato de carros elétricos com foco em desempenho e sustentabilidade."
     },
     {
-        "name": "Equipe 2",
-        "logo": "",
-        "description": "Descrição da equipe 2."
+        "name": "ANDRETTI FORMULA E",
+        "logo": "../imgEquipes/andretti.png",
+        "description": "A Andretti Formula E é uma equipe de automobilismo que compete na Fórmula E, a categoria de corridas de carros elétricos. Ela foi fundada pelo ex-piloto de Fórmula 1 e IndyCar, Michael Andretti, como parte da Andretti Autosport, uma das equipes mais renomadas dos EUA. A Andretti tem uma longa história no automobilismo e está envolvida em várias competições, incluindo IndyCar e Fórmula E. Desde sua entrada na Fórmula E, a equipe tem mostrado consistência e já teve parcerias com fabricantes como BMW. A Andretti é conhecida por sua experiência e inovação nas corridas elétricas"
     },
     {
         "name": "Equipe 3",
-        "logo": "",
+        "logo": "../imgEquipes/",
         "description": "Descrição da equipe 3."
     },
     {
         "name": "Equipe 4",
-        "logo": "",
+        "logo": "../imgEquipes/",
         "description": "Descrição da equipe 4."
     },
     {
         "name": "Equipe 5",
-        "logo": "",
+        "logo": "../imgEquipes/",
         "description": "Descrição da equipe 5."
     },
     {
         "name": "Equipe 6",
-        "logo": "",
+        "logo": "../imgEquipes/",
         "description": "Descrição da equipe 6."
     },
     {
         "name": "Equipe 7",
-        "logo": "",
+        "logo": "../imgEquipes/",
         "description": "Descrição da equipe 7."
     },
     {
         "name": "Equipe 8",
-        "logo": "",
+        "logo": "../imgEquipes/",
         "description": "Descrição da equipe 8."
     }
 ]

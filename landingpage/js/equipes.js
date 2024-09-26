@@ -1,3 +1,4 @@
+
 // Carregar equipes do JSON
 fetch('../data/equipes.json') 
     .then(response => {
@@ -16,9 +17,10 @@ fetch('../data/equipes.json')
 let currentIndex = 0; 
 let teams = []; 
 
+// Exibir as equipes ao carregar o JSON
 function displayTeams(data) {
     teams = data; 
-    renderTeam();
+    renderTeam(); // Renderiza a primeira equipe ao iniciar
 }
 
 function renderTeam() {
@@ -30,44 +32,23 @@ function renderTeam() {
             <p>${teams[currentIndex].description}</p>
         </div>
     `;
-
-    // Atualiza os botões
-    updateButtons();
 }
 
+// Função para mover o carrossel
 function moveCarousel(direction) {
-    const totalTeams = teams.length;
-
-    // Atualiza o índice com base na direção
     currentIndex += direction;
 
-    // Restringir o índice dentro do limite
+    // Loop entre o primeiro e o último
     if (currentIndex < 0) {
-        currentIndex = totalTeams - 1; 
-    } else if (currentIndex >= totalTeams) {
-        currentIndex = 0; 
+        currentIndex = teams.length - 1; // Volta para o último
+    } else if (currentIndex >= teams.length) {
+        currentIndex = 0; // Volta para o primeiro
     }
 
-    // Renderiza a equipe atual
+    // Renderiza a equipe atualizada
     renderTeam();
 }
 
-function updateButtons() {
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-
-    prevBtn.disabled = (currentIndex === 0); 
-    nextBtn.disabled = (currentIndex === teams.length - 1); 
-}
-
-const prevBtn = document.createElement('button');
-prevBtn.id = 'prevBtn';
-prevBtn.innerText = '❮'; 
-prevBtn.onclick = () => moveCarousel(-1);
-document.getElementById('team-list').appendChild(prevBtn);
-
-const nextBtn = document.createElement('button');
-nextBtn.id = 'nextBtn';
-nextBtn.innerText = '❯'; 
-nextBtn.onclick = () => moveCarousel(1);
-document.getElementById('team-list').appendChild(nextBtn);
+// Event listeners para os botões de navegação
+document.getElementById('prevBtn').addEventListener('click', () => moveCarousel(-1));
+document.getElementById('nextBtn').addEventListener('click', () => moveCarousel(1));
