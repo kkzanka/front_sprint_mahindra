@@ -7,36 +7,51 @@
     {
         "name": "ANDRETTI FORMULA E",
         "logo": "../imgEquipes/andretti.png",
-        "description": "A Andretti Formula E é uma equipe de automobilismo que compete na Fórmula E, a categoria de corridas de carros elétricos. Ela foi fundada pelo ex-piloto de Fórmula 1 e IndyCar, Michael Andretti, como parte da Andretti Autosport, uma das equipes mais renomadas dos EUA. A Andretti tem uma longa história no automobilismo e está envolvida em várias competições, incluindo IndyCar e Fórmula E. Desde sua entrada na Fórmula E, a equipe tem mostrado consistência e já teve parcerias com fabricantes como BMW. A Andretti é conhecida por sua experiência e inovação nas corridas elétricas"
+        "description": "A Andretti Formula E é uma equipe de automobilismo fundada por Michael Andretti, competindo na Fórmula E. Parte da Andretti Autosport, a equipe tem tradição em várias categorias e é conhecida pela inovação e consistência nas corridas elétricas."
     },
     {
-        "name": "Equipe 3",
-        "logo": "../imgEquipes/",
-        "description": "Descrição da equipe 3."
+        "name": "DS Penske",
+        "logo": "../imgEquipes/penske.png",
+        "description": "A DS Penske é uma equipe de Fórmula E formada pela parceria entre a DS Automobiles e Penske Autosport. Conhecida por seu desempenho forte, combina tecnologia francesa com expertise americana no automobilismo elétrico."
     },
     {
-        "name": "Equipe 4",
-        "logo": "../imgEquipes/",
-        "description": "Descrição da equipe 4."
+        "name": "Envision Racing",
+        "logo": "../imgEquipes/envision.png",
+        "description": "A Envision Racing é uma equipe de Fórmula E, apoiada pela Envision Group, focada em sustentabilidade e inovação. Anteriormente em parceria com a Audi, a equipe é conhecida por sua competitividade e compromisso com a mobilidade elétrica."
     },
     {
-        "name": "Equipe 5",
+        "name": "ERT Formula E Team ",
         "logo": "../imgEquipes/",
         "description": "Descrição da equipe 5."
     },
     {
-        "name": "Equipe 6",
+        "name": "Jaguar TCS Racing",
         "logo": "../imgEquipes/",
         "description": "Descrição da equipe 6."
     },
     {
-        "name": "Equipe 7",
+        "name": "Mahindra Racing",
         "logo": "../imgEquipes/",
         "description": "Descrição da equipe 7."
     },
     {
-        "name": "Equipe 8",
+        "name": "Maserati MSG Racing",
         "logo": "../imgEquipes/",
+        "description": "Descrição da equipe 8."
+    },
+    {
+        "name": "NEOM McLaren Formula E Team",
+        "logo": "../imgEquipes/",
+        "description": "Descrição da equipe 8."
+    },
+    {
+        "name": "Nissan Formula E Team",
+        "logo": "../imgEquipes/",
+        "description": "Descrição da equipe 8."
+    },
+    {
+        "name": "TAG Heuer Porsche Formula E Team",
+        "logo": "../imgEquipes/porsche.png",
         "description": "Descrição da equipe 8."
     }
 ]
