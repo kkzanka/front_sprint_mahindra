@@ -52,3 +52,14 @@ function moveCarousel(direction) {
 // Event listeners para os botões de navegação
 document.getElementById('prevBtn').addEventListener('click', () => moveCarousel(-1));
 document.getElementById('nextBtn').addEventListener('click', () => moveCarousel(1));
+
+let header = document.querySelector('.header')
+let toggleMenu = document.querySelector('.bar')
+let menu = document.querySelector('nav ul')
+
+const toggle = (e)=>{
+    toggleMenu.classList.toggle('active')
+    menu.classList.toggle('activeMenu')
+}
+
+toggleMenu.addEventListener('click',toggle)
