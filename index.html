@@ -20,15 +20,32 @@
         </div>
     </div>
 
-    <nav class="menu" id="menu">
-        <a href="assets/html/equipes.html" class="menu-item">Equipes</a>
-        <a href="assets/html/news.html" class="menu-item">Notícias Recentes</a>
-        <a href="assets/html/temporada.html" class="menu-item">Temporada Atual</a>
-    </nav>
-
-    <div class="login">
-        <a href="#">Login</a>
-    </div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- Use navbar-expand-lg -->
+            <a class="navbar-brand" href="#">E-fast</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav"> <!-- Remover mx-auto -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="assets/html/equipes.html">Equipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="assets/html/news.html">Notícias Recentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="assets/html/temporada.html">Temporada Atual</a>
+                    </li>
+                </ul>
+                <div class="ml-auto"> <!-- Mantém o botão de login à direita -->
+                    <a href="#" class="btn btn-outline-light">Login</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    
 
     <div class="buttonHolder" id="scrollButton">
 
@@ -91,12 +108,15 @@
             Seu navegador não suporta o elemento de vídeo.
         </video>
 
-        <video class="vertical-video" autoplay loop muted style="display: none;">
+        <video class="tokyo-vertical" autoplay loop muted style="display: none;">
             <source src="assets/img/tokyovertical.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
         </video>
     </div>
 
     <script src="assets/js/landingpage.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

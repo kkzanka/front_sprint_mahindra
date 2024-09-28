@@ -10,12 +10,12 @@
 body {
     overflow-x: hidden;
     margin: 0;
+    padding: 0; /* Adiciona padding zero */
     background-color: rgb(5, 27, 37);
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100vh;
+    min-height: 100vh; /* Altera de height para min-height */
     background-color: rgb(5, 27, 37);
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -31,17 +31,17 @@ body {
   }
 
   .electric{
-    padding: 20px 90px;
-    border-radius: 50px;
+    padding: 10px 50px;
+    border-radius: 10px;
     cursor: pointer;
-    background-color: rgba(50, 74, 255, 0.7);
+    background-color: rgba(41, 41, 41, 0.986);
     border: 2px solid rgb(125, 140, 255);
     color: white;
     position: relative;
     filter: blur(0px);
-    margin-left: 750px; /* Mover o botão para a direita */
-    bottom: 50px;
-    top: -20px;
+    margin-left: 800px; /* Mover o botão para a direita */
+    bottom: -50px;
+    top: -40px;
     left: 0;
   }
 
@@ -96,7 +96,7 @@ body {
   #b2{
     left: -10%;
     top: -165%;
-    width: 120%
+    width: 120%;
     /* filter: blur(.5px) */
   }
 
@@ -195,6 +195,7 @@ body {
   .buttonHolder{
     width: max-content;
     max-height: 20px;
+    
   }
 
   .hide{
@@ -208,6 +209,19 @@ body {
     opacity: 1 ;
   }
 
+  #y1, #b1 {
+    height: 180%; /* Reduz a altura dos raios amarelo e azul */
+    transform: scale(2.0, 1); /* Alarga ou encolhe horizontalmente sem afetar a altura */
+    top: -55%; /* Ajusta para manter a posição relativa aos outros elementos */
+    left: -6%;
+}
+
+#y2, #b2 {
+    height: 200%; /* Reduz a altura dos outros raios */
+    transform: scale(2.0, 1); /* Alarga ou encolhe horizontalmente sem afetar a altura */
+    top: -50%; /* Ajusta para manter a proporção achatada */
+    left: -8%;
+}
 
 
 
@@ -225,6 +239,7 @@ body {
 
 /* Imagem de Tela Cheia */
 .fullscreen-image {
+    min-height: 100vh;
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -237,8 +252,8 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.7); /* Fundo escurecido */
     transition: background-color 0.9s;
     cursor: pointer;
@@ -266,41 +281,52 @@ body {
 
 .next-section {
     width: 100%;
-    height: 100vh; /* A altura da seção para cobrir a tela */
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
 }
 
-.menu {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: grid; /* Usa grid ao invés de flex */
-    grid-template-columns: repeat(3, 1fr); /* Cria três colunas iguais */
-    gap: 30px; /* Espaçamento entre os itens */
+
+
+.navbar {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1001;
+    background-color: rgba(2, 0, 0, 0.692);
+    display: none; 
 }
 
-.menu-item {
-    color: wheat;
-    font-size: 1.5rem; /* Tamanho da fonte dos itens do menu */
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: color 0.3s;
-    text-align: center; /* Centraliza o texto dos itens */
+.navbar-nav {
+    justify-content: center;
+    width: 100%;
 }
 
-.menu-item:hover {
-    color: rgb(0, 98, 196); /* Cor ao passar o mouse */
+.nav-link {
+    color: #000980;
 }
 
-#menu {
-    display: none; /* Inicialmente oculto */
+.nav-link:hover {
+    color: #0056b3;
 }
 
+/* Personalize o botão de login, se necessário */
+.btn-outline-primary {
+    margin-left: 15px; /* Espaçamento à esquerda */
+}
+
+
+
+.login{
+    position: relative;
+    top: -70px;
+}
 
 .login a {
     position: absolute;
-    top: 20px;
     right: 20px;
     padding: 10px 20px;
     color: wheat;
@@ -329,6 +355,8 @@ body {
     overflow: hidden;
 }
 
+
+
 video {
     width: 100%;
     height: auto; 
@@ -337,25 +365,49 @@ video {
 
 
 /* Estilos Responsivos usando Bootstrap */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .giflanding {
         width: 25%;
+    }
+
+    .fullscreen-image{
+        background-image: url('../img/imgMobile.jpg');
     }
 
     .message {
         font-size: 1.6rem;
     }
 
-
-    
-@media (min-width: 992px) {
-    .menu {
-        gap: 30px; /* Ajuste do espaçamento entre os itens */
+    .navbar-nav {
+        flex-direction: column; /* Muda a direção para coluna em telas menores */
+        align-items: flex-start; /* Alinha à esquerda */
     }
 
-    .menu a {
-        font-size: 1.2rem;
-        padding: 8px 10px;
+    .nav-item {
+        margin-bottom: 10px; /* Adiciona espaço entre os itens */
+    }
+
+    .electric{
+        margin-left: 60px;
+    }
+
+    video {
+        
+        height: 100%; /* Ou ajuste conforme necessário */
+        width: auto; /* Permite que a largura do vídeo se ajuste automaticamente */
+        left: 30px;
+    }
+
+    
+    
+@media (max-width: 992px) {
+    .navbar-nav {
+        flex-direction: column; /* Muda a direção para coluna em telas menores */
+        align-items: flex-start; /* Alinha à esquerda */
+    }
+
+    .nav-item {
+        margin-bottom: 10px; /* Adiciona espaço entre os itens */
     }
 
     .login a {
@@ -364,8 +416,7 @@ video {
     }
 
 
-
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
     .message {
         font-size: 2rem;
     }

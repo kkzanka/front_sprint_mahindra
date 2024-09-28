@@ -2,14 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.querySelector('.overlay');
     const message = document.querySelector('.message');
     const giflanding = document.querySelector('.giflanding');
-    const menu = document.getElementById('menu');
+    const menu = document.querySelector('.navbar'); // Seleciona a navbar do Bootstrap
     const nextCircuit = document.querySelector('.nextcircuit'); // Certifique-se de que este elemento existe
     const race = document.querySelector('.race'); // Certifique-se de que este elemento existe
     const scrollButton = document.getElementById('scrollButton');
     const nextSection = document.getElementById('nextSection');
-
-
-    
+    const videoHorizontal = document.getElementById('videoHorizontal');
+    const videoVertical = document.getElementById('videoVertical');
 
     let claridade = false;
 
@@ -24,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             message.style.display = 'none';
             giflanding.style.display = 'none';
             overlay.style.cursor = 'default';
-            menu.style.display = 'grid'; // Usando grid no menu
+            menu.style.display = 'flex'; // Mostra a navbar do Bootstrap
 
             // Mostra os elementos da próxima seção
             if (nextCircuit) nextCircuit.classList.remove('hidden');
@@ -39,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             message.style.display = 'block';
             giflanding.style.display = 'block';
             overlay.style.cursor = 'pointer';
-            menu.style.display = 'none';
+            menu.style.display = 'none'; // Esconde a navbar
 
             document.body.classList.add('noscroll');
             scrollButton.disabled = true;
@@ -68,11 +67,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    changeImageBasedOnScreenWidth()
+    changeImageBasedOnScreenWidth();
 
+    window.addEventListener('resize', function() {
+        if (claridade) {
+            document.body.classList.remove('noscroll');
+        } else {
+            document.body.classList.add('noscroll');
+        }
+    });
 
+    function toggleVideo() {
+        if (window.innerWidth <= 768) { // Ajuste o ponto de quebra conforme necessário
+            videoHorizontal.style.display = 'none';
+            videoVertical.style.display = 'block';
+        } else {
+            videoHorizontal.style.display = 'block';
+            videoVertical.style.display = 'none';
+        }
+    }
 
+    // Adiciona o evento para verificar o redimensionamento da tela
+    window.addEventListener('resize', toggleVideo);
 
+    // Chama a função no carregamento da página
+    window.addEventListener('load', toggleVideo);
 });
-
 
