@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollButton = document.getElementById('scrollButton');
     const nextSection = document.getElementById('nextSection');
 
+
+    
+
     let claridade = false;
 
     // Desativa o scroll inicial
@@ -38,6 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
             overlay.style.cursor = 'pointer';
             menu.style.display = 'none';
 
+            document.body.classList.add('noscroll');
+            scrollButton.disabled = true;
+
             // Esconde os elementos da próxima seção
             if (nextCircuit) nextCircuit.classList.add('hidden');
             if (race) race.classList.add('hidden');
@@ -58,11 +64,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.innerWidth < 768) {
             image.src = "assets/img/giflanding.gif"; // Altere para a imagem desejada para telas menores
         } else {
-            image.src = "assets/img/giflanding.gif"; // Altere para a imagem desejada para telas maiores
+            image.src = "assets/img/giflanding.gif"; 
         }
     }
 
-    // Chamada inicial e ao redimensionar
-    changeImageBasedOnScreenWidth();
-    window.onresize = changeImageBasedOnScreenWidth;
+    changeImageBasedOnScreenWidth()
+
+
+
+
 });
+
+
