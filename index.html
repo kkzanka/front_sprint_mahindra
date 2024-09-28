@@ -5,37 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-fast</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="landingpage/css/landingpage.css">
+    <link rel="stylesheet" href="assets/css/landingpage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-    <div class="fullscreen-image">
-        <div class="overlay">
+<body class="noscroll">
+    <div class="fullscreen-image d-flex flex-column justify-content-center align-items-center">
+        <div class="overlay d-flex flex-column justify-content-center align-items-center">
             <div class="message">Clique na tela para iniciar...</div>
             <div class="giflanding">
-                <img src="landingpage/img/giflanding.gif" alt="GIF de Animação">
+                <img src="assets/img/giflanding.gif" alt="GIF de Animação" class="img-fluid">
             </div>
         </div>
     </div>
 
-    <div class="menu" id="menu" style="display: none;">
-        <a href="landingpage/html/equipes.html">Equipes</a>
-        <a href="landingpage/html/news.html">Notícias Recentes</a>
-        <a href="landingpage/html/temporada.html">Temporada Atual</a>
-    </div>
+    <nav class="menu" id="menu">
+        <a href="assets/html/equipes.html" class="menu-item">Equipes</a>
+        <a href="assets/html/news.html" class="menu-item">Notícias Recentes</a>
+        <a href="assets/html/temporada.html" class="menu-item">Temporada Atual</a>
+    </nav>
 
     <div class="login">
         <a href="#">Login</a>
     </div>
 
-    <div class="nextcircuit">
-        <img src="landingpage/img/circuit.gif" alt="circuit">
-    </div>
-    <div class="race">
-        <img src="landingpage/img/race.gif" alt="race">
+    <div class="button-container text-center">
+        <button class="btn btn-primary" id="scrollButton" disabled>Ir para a próxima seção</button>
     </div>
 
-    <script src="landingpage/js/landingpage.js"></script>
+    <div id="nextSection" class="next-section d-flex justify-content-center align-items-center">
+        <video autoplay loop muted class="w-100">
+            <source src="assets/img/tokyo.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    </div>
+
+    <script src="assets/js/landingpage.js"></script>
 </body>
 </html>
