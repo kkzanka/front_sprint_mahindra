@@ -22,6 +22,9 @@ body {
 
 .buttonHolder{
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
  
@@ -39,7 +42,7 @@ body {
     color: white;
     position: relative;
     filter: blur(0px);
-    margin-left: 800px; /* Mover o botão para a direita */
+    display: flex;
     bottom: -50px;
     top: -40px;
     left: 0;
@@ -237,16 +240,7 @@ body {
     border-radius: 100px;
 }
 
-/* Imagem de Tela Cheia */
-.fullscreen-image {
-    min-height: 100vh;
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url('../img/imgFront.jpg');
-}
+
 
 .overlay {
     position: fixed;
@@ -295,7 +289,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1001;
+    z-index: 1002;
     background-color: rgba(2, 0, 0, 0.692);
     display: none; 
 }
@@ -355,7 +349,39 @@ body {
     overflow: hidden;
 }
 
+.carousel {
+    height: 103vh; /* Ajuste conforme necessário */
+}
 
+.carousel-item img {
+    max-height: 100%; /* Permita que a imagem preencha a altura do item */
+    width: 100%; /* Garante que a imagem se ajuste à largura do carrossel */
+    object-fit: cover; /* Mantenha a proporção sem distorção */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 1002; 
+}
+
+.carousel-indicators button {
+    width: 20px; 
+    height: 8px; 
+    background-color: white; 
+    border: none; 
+    border-radius: 4px; 
+    opacity: 0.5; 
+    margin: 0 2px; 
+}
+
+.carousel-indicators .active {
+    opacity: 1; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-indicators {
+    bottom: 85px; /* Ajusta a posição dos indicadores mais para cima */
+}
 
 video {
     width: 100%;
@@ -370,9 +396,6 @@ video {
         width: 25%;
     }
 
-    .fullscreen-image{
-        background-image: url('../img/imgMobile.jpg');
-    }
 
     .message {
         font-size: 1.6rem;
@@ -387,9 +410,6 @@ video {
         margin-bottom: 10px; /* Adiciona espaço entre os itens */
     }
 
-    .electric{
-        margin-left: 60px;
-    }
 
     video {
         
@@ -398,6 +418,25 @@ video {
         left: 30px;
     }
 
+    .next-section {
+        margin-top: 0; /* Remove qualquer margem entre a primeira página e a próxima seção */
+        padding: 0; /* Garante que não tenha padding extra */
+    }
+
+    .carousel-item img {
+        width: 100vw; 
+        height: 100vh; 
+        object-fit: cover; 
+    }
+    
+    .carousel {
+        height: 100vh; 
+    }
+
+    .carousel-indicators {
+        bottom: 50px; /* Ajusta a posição dos indicadores mais para cima */
+    }
+}
     
     
 @media (max-width: 992px) {
@@ -416,13 +455,92 @@ video {
     }
 
 
+
+    video {
+        
+        height: 100%; /* Ou ajuste conforme necessário */
+        width: auto; /* Permite que a largura do vídeo se ajuste automaticamente */
+    }
+
+    .carousel-item img {
+        width: 100vw; 
+        height: 100vh; 
+        object-fit: cover; 
+    }
+    
+    .carousel {
+        height: 100vh; 
+    }
+
+    .carousel-indicators {
+        bottom: 50px; /* Ajusta a posição dos indicadores mais para cima */
+    }
+
+
 @media (max-width: 1200px) {
     .message {
         font-size: 2rem;
     }
 
+
+
     .giflanding {
         width: 18%;
     }
+
+
+    video {
+        
+        height: 100%; /* Ou ajuste conforme necessário */
+        width: auto; /* Permite que a largura do vídeo se ajuste automaticamente */
+        left: 80px;
+    }
+
+    .carousel-item img {
+        width: 100vw; 
+        height: 100vh; 
+        object-fit: cover; 
+    }
+    
+    .carousel {
+        height: 100vh; 
+    }
+
+    .carousel-indicators {
+        bottom: 50px; /* Ajusta a posição dos indicadores mais para cima */
+    }
 }}
+
+@media (max-width: 1400px) {
+    .message {
+        font-size: 2rem;
+    }
+
+
+
+    .giflanding {
+        width: 18%;
+    }
+
+
+    video {
+        
+        height: 100%; /* Ou ajuste conforme necessário */
+        width: auto; /* Permite que a largura do vídeo se ajuste automaticamente */
+        left: 80px;
+    }
+
+    .carousel-item img {
+        width: 100vw; 
+        height: 100vh; 
+        object-fit: cover; 
+    }
+    
+    .carousel {
+        height: 100vh; 
+    }
+
+    .carousel-indicators {
+        bottom: 50px; /* Ajusta a posição dos indicadores mais para cima */
+    }
 }
