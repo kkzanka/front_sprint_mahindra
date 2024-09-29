@@ -409,6 +409,20 @@ video {
     object-fit: cover;
 }
 
+.dropdown-menu {
+    background-color: #343a40; /* Cor de fundo escura */
+}
+
+.dropdown-item {
+    color: #fff; /* Cor do texto */
+}
+
+.dropdown-item:hover {
+    background-color: #495057; /* Cor de hover */
+}
+
+
+
 
 /* Estilos Responsivos usando Bootstrap */
 @media (max-width: 768px) {
