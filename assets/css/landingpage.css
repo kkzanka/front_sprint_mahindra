@@ -230,6 +230,23 @@ body {
     display: none;
 }
 
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Garante que o contêiner da logo use a largura total da página */
+    height: 100vh; /* Centraliza verticalmente */
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Para que a logo fique acima de outros elementos */
+}
+
+.logo img {
+    width: 500px; /* Ajuste o tamanho da logo conforme necessário */
+    height: auto; /* Mantém a proporção */
+}
 
 /* Scrollbar Customizado */
 ::-webkit-scrollbar {
@@ -260,12 +277,13 @@ body {
     color: white;
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 120px;
 }
 
 .giflanding {
-    width: 18%;
+    width: 15%;
     height: auto; /* Mantém a proporção */
+    margin-bottom: 10px;
 }
 
 .buttonHolder {
@@ -291,7 +309,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1002;
+    z-index: 1005;
     background-color: rgba(2, 0, 0, 0.692);
     display: none; 
 }
@@ -394,13 +412,18 @@ video {
 
 /* Estilos Responsivos usando Bootstrap */
 @media (max-width: 768px) {
-    .giflanding {
-        width: 25%;
-    }
-
-
     .message {
         font-size: 1.6rem;
+        margin-bottom: 80px; /* Ajusta a margem inferior */
+        margin-top: 210px; /* Adicione esta linha para trazer a mensagem para baixo */
+    }
+
+    .giflanding img {
+        width: 700%; 
+        height: auto;
+        transform: scale(1.5); 
+        margin-bottom: 40px; 
+        margin-top: 40px; /* Adicione esta linha para trazer o GIF para baixo */
     }
 
     .navbar-nav {
@@ -438,6 +461,12 @@ video {
     .carousel-indicators {
         bottom: 50px; /* Ajusta a posição dos indicadores mais para cima */
     }
+
+    .logo img{
+        width: 250px;
+        height: auto;
+        margin-bottom: 130px;
+    }
 }
     
     
@@ -456,7 +485,19 @@ video {
         top: 50px; /* Ajusta a posição do login para evitar sobreposição */
     }
 
+    .message {
+        font-size: 1.6rem;
+        margin-bottom: 40px; /* Ajusta a margem inferior */
+        margin-top: 130px; /* Adicione esta linha para trazer a mensagem para baixo */
+    }
 
+    .giflanding img {
+        width: 700%; 
+        height: auto;
+        transform: scale(1.5); 
+        margin-bottom: 40px; 
+        margin-top: 25px; /* Adicione esta linha para trazer o GIF para baixo */
+    }
 
     video {
         
@@ -481,13 +522,16 @@ video {
 
 @media (max-width: 1200px) {
     .message {
-        font-size: 2rem;
+        font-size: 1.6rem;
+        margin-bottom: 90px;
     }
 
 
 
     .giflanding {
-        width: 18%;
+        width: 13%; 
+        transform: scale(1.5); 
+        margin-bottom: 190px; 
     }
 
 
@@ -511,17 +555,31 @@ video {
     .carousel-indicators {
         bottom: 50px; /* Ajusta a posição dos indicadores mais para cima */
     }
+
+    .logo img{
+        width: 250px;
+        height: auto;
+        margin-bottom: 40px;
+    }
 }}
 
 @media (max-width: 1400px) {
     .message {
-        font-size: 2rem;
+        width: 100%;
+        font-size: 1.6rem;
+        margin-bottom: 70px;
     }
 
-
+    .logo img{
+        width: 400px;
+        height: auto;
+        margin-bottom: 45px;
+    }
 
     .giflanding {
-        width: 18%;
+        width: 13%; 
+        transform: scale(1.5); 
+        margin-bottom: 95px; 
     }
 
 

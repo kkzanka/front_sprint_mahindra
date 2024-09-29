@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const race = document.querySelector('.race'); 
     const scrollButton = document.getElementById('scrollButton');
     const nextSection = document.getElementById('nextSection');
+    const logo = document.querySelector('.logo');
 
     let claridade = false;
 
@@ -23,7 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
             giflanding.style.display = 'none';
             overlay.style.cursor = 'default';
             menu.style.display = 'flex';
-            scrollButton.style.display = "flex"
+            scrollButton.style.display = "flex";
+            logo.style.display = "none";
 
             if (nextCircuit) nextCircuit.classList.remove('hidden');
             if (race) race.classList.remove('hidden');
@@ -37,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             overlay.style.cursor = 'pointer';
             menu.style.display = 'none';
             scrollButton.style.display = "none"
+            logo.style.display = "flex";
 
             document.body.classList.add('noscroll');
             scrollButton.disabled = true;
