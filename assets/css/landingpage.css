@@ -226,7 +226,9 @@ body {
     left: -8%;
 }
 
-
+#scrollButton{
+    display: none;
+}
 
 
 /* Scrollbar Customizado */

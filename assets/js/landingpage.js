@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             giflanding.style.display = 'none';
             overlay.style.cursor = 'default';
             menu.style.display = 'flex';
+            scrollButton.style.display = "flex"
 
             if (nextCircuit) nextCircuit.classList.remove('hidden');
             if (race) race.classList.remove('hidden');
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             giflanding.style.display = 'block';
             overlay.style.cursor = 'pointer';
             menu.style.display = 'none';
+            scrollButton.style.display = "none"
 
             document.body.classList.add('noscroll');
             scrollButton.disabled = true;
