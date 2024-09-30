@@ -473,78 +473,119 @@ video {
 
 
 
-/* Estilos Responsivos usando Bootstrap */
-@media (max-width: 768px) {
 
-    .overlay{
-        z-index: 1000;
+@media (max-width: 768px) {
+    /* Reset geral para eliminar espaços */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    .navbar-toggler{
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        position: relative;
+    }
+
+    .buttonHolder{
+        position: relative;
+    }
+
+    .container {
+        width: 100vw;
+        max-width: 100vw;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    .overlay {
+        z-index: 1000;
+        width: 100vw;
+    }
+
+    .navbar-toggler {
         z-index: 1203;
     }
 
     .message {
         font-size: 1.6rem;
-        margin-bottom: 80px; /* Ajusta a margem inferior */
-        margin-top: 210px; /* Adicione esta linha para trazer a mensagem para baixo */
+        margin-bottom: 80px;
+        margin-top: 210px;
+        width: 100%;
     }
 
     .giflanding img {
-        width: 700%; 
+        width: 100%;
         height: auto;
-        transform: scale(1.5); 
-        margin-bottom: 40px; 
-        margin-top: 40px; /* Adicione esta linha para trazer o GIF para baixo */
+        transform: scale(1.5);
+        margin-bottom: 40px;
+        margin-top: 40px;
+        max-width: 100vw;
     }
 
     .navbar-nav {
-        flex-direction: column; /* Muda a direção para coluna em telas menores */
-        align-items: flex-start; /* Alinha à esquerda */
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
     }
 
-    .navbar{
+    .navbar {
         z-index: 1105;
+        width: 100%;
     }
 
     .nav-item {
-        margin-bottom: 10px; /* Adiciona espaço entre os itens */
+        margin-bottom: 10px;
+        width: 100%;
     }
 
-
     video {
-        
-        height: 100%; /* Ou ajuste conforme necessário */
-        width: auto; /* Permite que a largura do vídeo se ajuste automaticamente */
-        left: 30px;
+        width: 100%;
     }
 
     .next-section {
-        margin-top: 0; /* Remove qualquer margem entre a primeira página e a próxima seção */
-        padding: 0; /* Garante que não tenha padding extra */
+        margin: 0;
+        padding: 110px;
+        width: 100vw;
     }
 
     .carousel-item img {
-        width: 100vw; 
-        height: 100vh; 
-        object-fit: cover; 
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
     }
-    
+
     .carousel {
-        height: 100vh; 
+        height: 100vh;
+        width: 100vw;
     }
 
     .carousel-indicators {
-        bottom: 50px; /* Ajusta a posição dos indicadores mais para cima */
+        bottom: 50px;
         z-index: 1002;
     }
 
-    .logo img{
+    .logo img {
         width: 250px;
         height: auto;
         margin-bottom: 130px;
     }
+
+    /* Forçar largura total para todos os elementos principais */
+    .signin-singup,
+    .formulario-container,
+    .painel-container {
+        width: 100vw;
+        max-width: 100vw;
+    }
 }
+
     
     
 @media (max-width: 992px) {
