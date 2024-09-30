@@ -414,7 +414,7 @@ body {
 
 .carousel-control-prev,
 .carousel-control-next {
-    z-index: 1103; 
+    z-index: 1100; 
 }
 
 
@@ -466,11 +466,24 @@ video {
     text-align: center;
 }
 
+.navbar-toggler{
+    z-index: 1203;
+}
+
 
 
 
 /* Estilos Responsivos usando Bootstrap */
 @media (max-width: 768px) {
+
+    .overlay{
+        z-index: 1000;
+    }
+
+    .navbar-toggler{
+        z-index: 1203;
+    }
+
     .message {
         font-size: 1.6rem;
         margin-bottom: 80px; /* Ajusta a margem inferior */
@@ -491,7 +504,7 @@ video {
     }
 
     .navbar{
-        z-index: 1100;
+        z-index: 1105;
     }
 
     .nav-item {
@@ -523,6 +536,7 @@ video {
 
     .carousel-indicators {
         bottom: 50px; /* Ajusta a posição dos indicadores mais para cima */
+        z-index: 1002;
     }
 
     .logo img{
