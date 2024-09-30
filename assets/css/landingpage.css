@@ -4,11 +4,248 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Kanit', sans-serif;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 body {
     overflow-x: hidden;
-    margin: 0; 
+    margin: 0;
+    padding: 0; /* Adiciona padding zero */
+    background-color: rgb(5, 27, 37);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1); 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Altera de height para min-height */
+    background-color: rgb(5, 27, 37);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.buttonHolder{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ 
+
+  svg{
+    position: absolute;
+  }
+
+  .electric{
+    padding: 10px 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgba(41, 41, 41, 0.986);
+    border: 2px solid rgb(41, 41, 41, 0.986);
+    color: white;
+    position: relative;
+    filter: blur(0px);
+    display: flex;
+    bottom: -50px;
+    top: -40px;
+    left: 0;
+  }
+
+ 
+  @keyframes dash {
+  to {
+  stroke-dashoffset: 0;
+  }
+  }
+
+  .yellow{
+    width: 110%;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 1000;
+    animation: dash 1s linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+
+
+  }
+
+  .blue{
+    width: 110%;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 1000;
+    animation: dash 1.2s linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+   
+  }
+
+  #y1{
+    top: -115%;
+    left: -5%;
+    filter: blur(.5px);
+
+  }
+
+  #y2{
+    width: 120%;
+    left: -10%;
+    top: -155%;
+    filter: brightness(1);
+  }
+
+  #b1{
+    left: -5%;
+    top: -125%;
+    /* filter: blur(.5px) */
+  }
+
+  #b2{
+    left: -10%;
+    top: -165%;
+    width: 120%;
+    /* filter: blur(.5px) */
+  }
+
+  @keyframes dot1 {
+    from{
+      bottom: 0%;
+      left: 10%;
+      opacity: 1;
+    }
+    to{
+      bottom: -30%;
+      left: 0%;
+      opacity: 0;
+    }
+  }
+  @keyframes dot2 {
+    from{
+      top: 0%;
+      left: 30%;
+      opacity: 1;
+    }
+    to{
+      top: -30%;
+      left: 40%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes dot3 {
+    from{
+      top: 0%;
+      left: 80%;
+      opacity: 1;
+    }
+    to{
+      top: -30%;
+      left: 80%;
+      opacity: 0;
+    }
+  }
+  @keyframes dot4 {
+    from{
+      bottom: 20%;
+      left: 100%;
+      opacity: 1;
+    }
+    to{
+      bottom: 30%;
+      left: 120%;
+      opacity: 0;
+    }
+  }
+
+  .part{
+    content: ' ';
+    width: 5px;
+    height: 5px;
+    border-radius: 2px;
+    background-color: rgb(27, 164, 255);
+    z-index: 2;
+    position: absolute;
+    filter: blur(1px);
+    display: none;
+  }
+
+  #part1{
+    animation: dot1;
+    transform-origin: center;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-iteration-count: infinite;
+  }
+  #part2{
+    animation: dot2;
+    transform-origin: center;
+    animation-duration: 1.6s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-iteration-count: infinite;
+  }
+  #part3{
+    animation: dot3;
+    transform-origin: center;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-iteration-count: infinite;
+  }
+
+  #part4{
+    animation: dot4;
+    transform-origin: center;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-iteration-count: infinite;
+  }
+
+  .buttonHolder{
+    width: max-content;
+    max-height: 20px;
+    
+  }
+
+  .hide{
+    opacity: 0;
+  }
+ 
+  #electric:hover + .hide{
+    opacity: 1 ;
+  }
+  #electric:hover  .hide{
+    opacity: 1 ;
+  }
+
+  #y1, #b1 {
+    height: 180%; /* Reduz a altura dos raios amarelo e azul */
+    transform: scale(2.0, 1); /* Alarga ou encolhe horizontalmente sem afetar a altura */
+    top: -55%; /* Ajusta para manter a posição relativa aos outros elementos */
+    left: -6%;
+}
+
+#y2, #b2 {
+    height: 200%; /* Reduz a altura dos outros raios */
+    transform: scale(2.0, 1); /* Alarga ou encolhe horizontalmente sem afetar a altura */
+    top: -50%; /* Ajusta para manter a proporção achatada */
+    left: -8%;
+}
+
+#scrollButton{
+    display: none;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Garante que o contêiner da logo use a largura total da página */
+    height: 100vh; /* Centraliza verticalmente */
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Para que a logo fique acima de outros elementos */
+}
+
+.logo img {
+    width: 500px; /* Ajuste o tamanho da logo conforme necessário */
+    height: auto; /* Mantém a proporção */
 }
 
 /* Scrollbar Customizado */
@@ -22,84 +259,105 @@ body {
     border-radius: 100px;
 }
 
-/* Imagem de Tela Cheia */
-.fullscreen-image {
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url('../img/imgFront.jpg');
-}
+
 
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.7); /* Fundo escurecido */
     transition: background-color 0.9s;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 1008;
 }
 
 .message {
     color: white;
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 120px;
 }
 
 .giflanding {
-    width: 18%;
+    width: 15%;
     height: auto; /* Mantém a proporção */
+    margin-bottom: 10px;
 }
 
-.button-container {
+.buttonHolder {
     position: absolute;
-    bottom: 20px;
+    bottom: 90px;
     width: 100%;
-    z-index: 1001;
+    z-index: 10015;
 }
 
 .next-section {
+    position: relative;
     width: 100%;
-    height: 100vh; /* A altura da seção para cobrir a tela */
+    height: 100vh; 
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide a seção em duas colunas iguais */
+    grid-template-rows: auto; /* A altura das linhas será automática */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    gap: 20px; /* Espaçamento entre os elementos da grid */
+    padding: 20px; /* Espaçamento interno da seção */
 }
 
-.menu {
+
+.video-overlay {
     position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: grid; /* Usa grid ao invés de flex */
-    grid-template-columns: repeat(3, 1fr); /* Cria três colunas iguais */
-    gap: 30px; /* Espaçamento entre os itens */
-    z-index: 1001;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1005;
 }
 
-.menu-item {
-    color: wheat;
-    font-size: 1.5rem; /* Tamanho da fonte dos itens do menu */
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: color 0.3s;
-    text-align: center; /* Centraliza o texto dos itens */
+.navbar {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1010;
+    background-color: rgba(2, 0, 0, 0.692);
+    display: none; 
 }
 
-.menu-item:hover {
-    color: rgb(0, 98, 196); /* Cor ao passar o mouse */
+.navbar-nav {
+    justify-content: center;
+    width: 100%;
 }
 
-#menu {
-    display: none; /* Inicialmente oculto */
+.nav-link {
+    color: #000980;
+    font-size: 1.2rem;
 }
 
+.nav-link:hover {
+    color: #0056b3;
+    font-size: 1.2rem;
+}
+
+/* Personalize o botão de login, se necessário */
+.btn-outline-primary {
+    margin-left: 15px; /* Espaçamento à esquerda */
+}
+
+
+
+.login{
+    position: relative;
+    top: -70px;
+}
 
 .login a {
     position: absolute;
-    top: 20px;
     right: 20px;
     padding: 10px 20px;
     color: wheat;
@@ -128,52 +386,264 @@ body {
     overflow: hidden;
 }
 
+.carousel {
+    height: 103vh; /* Ajuste conforme necessário */
+}
+
+.carousel-item img {
+    max-height: 100%; /* Permita que a imagem preencha a altura do item */
+    width: 100%; /* Garante que a imagem se ajuste à largura do carrossel */
+    object-fit: cover; /* Mantenha a proporção sem distorção */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 1012; 
+}
+
+.carousel-indicators button {
+    width: 20px; 
+    height: 8px; 
+    background-color: white; 
+    border: none; 
+    border-radius: 4px; 
+    opacity: 0.5; 
+    margin: 0 2px; 
+}
+
+.carousel-indicators .active {
+    opacity: 1; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-indicators {
+    bottom: 85px; /* Ajusta a posição dos indicadores mais para cima */
+}
+
 video {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: auto; 
     object-fit: cover;
 }
 
-/* Estilos Responsivos usando Bootstrap */
-@media (min-width: 768px) {
-    .giflanding {
-        width: 25%;
-    }
-
-    .message {
-        font-size: 1.6rem;
-    }
-
-    .video-container {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.dropdown-menu {
+    background-color: #343a40; /* Cor de fundo escura */
 }
 
-@media (min-width: 992px) {
-    .menu {
-        gap: 30px; /* Ajuste do espaçamento entre os itens */
+.dropdown-item {
+    color: #fff; /* Cor do texto */
+}
+
+.dropdown-item:hover {
+    background-color: #495057; /* Cor de hover */
+}
+
+
+
+
+/* Estilos Responsivos usando Bootstrap */
+@media (max-width: 768px) {
+    .message {
+        font-size: 1.6rem;
+        margin-bottom: 80px; /* Ajusta a margem inferior */
+        margin-top: 210px; /* Adicione esta linha para trazer a mensagem para baixo */
     }
 
-    .menu a {
-        font-size: 1.2rem;
-        padding: 8px 10px;
+    .giflanding img {
+        width: 700%; 
+        height: auto;
+        transform: scale(1.5); 
+        margin-bottom: 40px; 
+        margin-top: 40px; /* Adicione esta linha para trazer o GIF para baixo */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Muda a direção para coluna em telas menores */
+        align-items: flex-start; /* Alinha à esquerda */
+    }
+
+    .navbar{
+        z-index: 1100;
+    }
+
+    .nav-item {
+        margin-bottom: 10px; /* Adiciona espaço entre os itens */
+    }
+
+
+    video {
+        
+        height: 100%; /* Ou ajuste conforme necessário */
+        width: auto; /* Permite que a largura do vídeo se ajuste automaticamente */
+        left: 30px;
+    }
+
+    .next-section {
+        margin-top: 0; /* Remove qualquer margem entre a primeira página e a próxima seção */
+        padding: 0; /* Garante que não tenha padding extra */
+    }
+
+    .carousel-item img {
+        width: 100vw; 
+        height: 100vh; 
+        object-fit: cover; 
+    }
+    
+    .carousel {
+        height: 100vh; 
+    }
+
+    .carousel-indicators {
+        bottom: 50px; /* Ajusta a posição dos indicadores mais para cima */
+    }
+
+    .logo img{
+        width: 250px;
+        height: auto;
+        margin-bottom: 130px;
+    }
+}
+    
+    
+@media (max-width: 992px) {
+    .navbar-nav {
+        flex-direction: column; /* Muda a direção para coluna em telas menores */
+        align-items: flex-start; /* Alinha à esquerda */
+    }
+
+    .nav-item {
+        margin-bottom: 10px; /* Adiciona espaço entre os itens */
+    }
+
+    .navbar{
+        z-index: 1100;
     }
 
     .login a {
         font-size: 1.1rem;
         top: 50px; /* Ajusta a posição do login para evitar sobreposição */
     }
-}
 
-@media (min-width: 1200px) {
     .message {
-        font-size: 2rem;
+        font-size: 1.6rem;
+        margin-bottom: 40px; /* Ajusta a margem inferior */
+        margin-top: 130px; /* Adicione esta linha para trazer a mensagem para baixo */
+    }
+
+    .giflanding img {
+        width: 700%; 
+        height: auto;
+        transform: scale(1.5); 
+        margin-bottom: 40px; 
+        margin-top: 25px; /* Adicione esta linha para trazer o GIF para baixo */
+    }
+
+    video {
+        
+        height: 100%; /* Ou ajuste conforme necessário */
+        width: auto; /* Permite que a largura do vídeo se ajuste automaticamente */
+    }
+
+    .carousel-item img {
+        width: 100vw; 
+        height: 100vh; 
+        object-fit: cover; 
+    }
+    
+    .carousel {
+        height: 100vh; 
+    }
+
+    .carousel-indicators {
+        bottom: 50px; /* Ajusta a posição dos indicadores mais para cima */
+    }
+
+
+@media (max-width: 1200px) {
+    .message {
+        font-size: 1.6rem;
+        margin-bottom: 90px;
+    }
+
+
+
+    .giflanding {
+        width: 13%; 
+        transform: scale(1.5); 
+        margin-bottom: 190px; 
+    }
+
+    .navbar{
+        z-index: 1100;
+    }
+
+
+    video {
+        
+        height: 100%; /* Ou ajuste conforme necessário */
+        width: auto; /* Permite que a largura do vídeo se ajuste automaticamente */
+        left: 80px;
+    }
+
+    .carousel-item img {
+        width: 100vw; 
+        height: 100vh; 
+        object-fit: cover; 
+    }
+    
+    .carousel {
+        height: 100vh; 
+    }
+
+    .carousel-indicators {
+        bottom: 50px; /* Ajusta a posição dos indicadores mais para cima */
+    }
+
+    .logo img{
+        width: 250px;
+        height: auto;
+        margin-bottom: 40px;
+    }
+}}
+
+@media (max-width: 1400px) {
+    .message {
+        width: 100%;
+        font-size: 1.6rem;
+        margin-bottom: 70px;
+    }
+
+    .logo img{
+        width: 400px;
+        height: auto;
+        margin-bottom: 45px;
     }
 
     .giflanding {
-        width: 18%;
+        width: 13%; 
+        transform: scale(1.5); 
+        margin-bottom: 95px; 
+    }
+
+
+    video {
+        
+        height: 100%; /* Ou ajuste conforme necessário */
+        width: auto; /* Permite que a largura do vídeo se ajuste automaticamente */
+        left: 80px;
+    }
+
+    .carousel-item img {
+        width: 100vw; 
+        height: 100vh; 
+        object-fit: cover; 
+    }
+    
+    .carousel {
+        height: 100vh; 
+    }
+
+    .carousel-indicators {
+        bottom: 50px; /* Ajusta a posição dos indicadores mais para cima */
     }
 }
