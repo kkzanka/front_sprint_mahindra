@@ -270,7 +270,7 @@ body {
     background-color: rgba(0, 0, 0, 0.7); /* Fundo escurecido */
     transition: background-color 0.9s;
     cursor: pointer;
-    z-index: 1008;
+    z-index: 1002;
 }
 
 .message {
@@ -364,7 +364,7 @@ body {
     text-decoration: none;
     font-size: 1.3rem;
     transition: color 0.3s;
-    z-index: 1001;
+    z-index: 1004;
 }
 
 .login a:hover {
@@ -398,7 +398,7 @@ body {
 
 .carousel-control-prev,
 .carousel-control-next {
-    z-index: 1012; 
+    z-index: 1003; 
 }
 
 .carousel-indicators button {
