@@ -248,24 +248,33 @@ a {
     }
 }
 
-@media (max-width:635px){
-    .container::before{
+@media (max-width: 635px) {
+    .container::before {
         display: none;
     }
+
+    .input-preecher{
+        width: 300px;
+    }
+
     form{
         width: 80%;
     }
-    form.sign-up-form{
-        display: none;
+
+    form.sign-up-form {
+        display: none; /* Inicialmente esconde o formulário de Cadastro */
     }
-    .container.sign-up-mode2 form.sign-up-form{
+
+    .container.sign-up-mode2 form.sign-up-form {
         display: flex;
-        opacity: 1;
+        opacity: 1; /* Mostra o formulário de Login */
     }
-    .container.sign-in-mode2 form.sign-in-form{
-        display: none;
+    .container.sign-in-mode2 form.sign-up-form {
+        display: flex; /* Mostra o formulário de Login */
     }
-    .painel-container{
+
+    /* Esconder os painéis em telas menores */
+    .painel-container {
         display: none;
     }
 }
