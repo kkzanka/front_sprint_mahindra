@@ -270,8 +270,24 @@ body {
     background-color: rgba(0, 0, 0, 0.7); /* Fundo escurecido */
     transition: background-color 0.9s;
     cursor: pointer;
-    z-index: 1002;
+    z-index: 1102;
 }
+
+.logo-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Para centralizar em relação ao próximo elemento */
+    top: 20px; /* Ajuste a distância do topo conforme necessário */
+    width: 100%; /* Garante que a logo use a largura total */
+    z-index: 1007; /* Para que fique acima dos outros elementos */
+}
+
+.logo-next img {
+    width: 150px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção */
+}
+
 
 .message {
     color: white;
@@ -324,7 +340,7 @@ body {
     left: 0;
     width: 100%;
     padding: 10px;
-    z-index: 1010;
+    z-index: 1105;
     background-color: rgba(2, 0, 0, 0.692);
     display: none; 
 }
@@ -398,12 +414,13 @@ body {
 
 .carousel-control-prev,
 .carousel-control-next {
-    z-index: 1003; 
+    z-index: 1103; 
 }
+
 
 .carousel-indicators button {
     width: 20px; 
-    height: 8px; 
+    height: 4px; 
     background-color: white; 
     border: none; 
     border-radius: 4px; 
@@ -436,6 +453,17 @@ video {
 
 .dropdown-item:hover {
     background-color: #495057; /* Cor de hover */
+}
+
+.cronometro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem; /* Ajuste o tamanho da fonte conforme necessário */
+    color: white; /* Cor do texto */
+    z-index: 1008; /* Para garantir que fique acima do vídeo */
+    text-align: center;
 }
 
 

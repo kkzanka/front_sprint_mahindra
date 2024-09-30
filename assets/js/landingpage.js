@@ -8,8 +8,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollButton = document.getElementById('scrollButton');
     const nextSection = document.getElementById('nextSection');
     const logo = document.querySelector('.logo');
+    const cronometroElem = document.getElementById('cronometro');
 
     let claridade = false;
+    let countdown; // Para armazenar o intervalo do cronômetro
+
+    // Tempo inicial em segundos (5 dias)
+    let remainingTime = 5 * 24 * 60 * 60; // 5 dias em segundos
+
+    // Verifica se há um tempo salvo no localStorage
+    const savedTime = localStorage.getItem('remainingTime');
+    if (savedTime) {
+        remainingTime = parseInt(savedTime, 10);
+    }
+
+    // Atualiza o cronômetro na tela
+    function updateCronometro() {
+        const dias = Math.floor(remainingTime / (24 * 60 * 60));
+        const horas = Math.floor((remainingTime % (24 * 60 * 60)) / (60 * 60));
+        const minutos = Math.floor((remainingTime % (60 * 60)) / 60);
+        const segundos = remainingTime % 60;
+
+        cronometroElem.textContent = `${String(dias).padStart(2, '0')}:${String(horas).padStart(2, '0')}:${String(minutos).padStart(2, '0')}:${String(segundos).padStart(2, '0')}`;
+
+        // Salva o tempo restante no localStorage
+        localStorage.setItem('remainingTime', remainingTime);
+    }
+
+    // Inicia o cronômetro
+    function startCronometro() {
+        countdown = setInterval(() => {
+            if (remainingTime > 0) {
+                remainingTime--;
+                updateCronometro();
+            } else {
+                clearInterval(countdown);
+                // Opcional: Remova o tempo do localStorage quando acabar
+                localStorage.removeItem('remainingTime');
+            }
+        }, 1000);
+    }
 
     // Desativa o scroll inicial
     document.body.classList.add('noscroll');
@@ -38,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             giflanding.style.display = 'block';
             overlay.style.cursor = 'pointer';
             menu.style.display = 'none';
-            scrollButton.style.display = "none"
+            scrollButton.style.display = "none";
             logo.style.display = "flex";
 
             document.body.classList.add('noscroll');
@@ -57,17 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function changeImageBasedOnScreenWidth() {
-        const image = document.querySelector('.fullscreen-image img');
-
-        if (window.innerWidth < 768) {
-            image.src = "assets/img/giflanding.gif";
-        } else {
-            image.src = "assets/img/giflanding.gif"; 
-        }
-    }
-
-    changeImageBasedOnScreenWidth();
+    // Atualiza e inicia o cronômetro
+    updateCronometro();
+    startCronometro();
 
     window.addEventListener('resize', function() {
         if (claridade) {
@@ -76,6 +106,4 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.add('noscroll');
         }
     });
-
-    
 });
