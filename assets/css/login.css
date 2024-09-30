@@ -253,24 +253,52 @@ a {
         display: none;
     }
 
-    .input-preecher{
+    .input-preecher {
         width: 300px;
     }
 
-    form{
+    form {
         width: 80%;
     }
 
+    .signin-singup {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    form.sign-up-form,
+    form.sign-in-form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.5s ease-in-out;
+        width: 100%;
+    }
+
     form.sign-up-form {
-        display: none; /* Inicialmente esconde o formulário de Cadastro */
+        opacity: 0;
+        transform: translate(100%, -50%);
+        pointer-events: none;
+    }
+
+    form.sign-in-form {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+        pointer-events: all;
     }
 
     .container.sign-up-mode2 form.sign-up-form {
-        display: flex;
-        opacity: 1; /* Mostra o formulário de Login */
+        opacity: 1;
+        transform: translate(-50%, -50%);
+        pointer-events: all;
     }
-    .container.sign-in-mode2 form.sign-up-form {
-        display: flex; /* Mostra o formulário de Login */
+
+    .container.sign-up-mode2 form.sign-in-form {
+        opacity: 0;
+        transform: translate(-150%, -50%);
+        pointer-events: none;
     }
 
     /* Esconder os painéis em telas menores */
