@@ -270,7 +270,7 @@ body {
     background-color: rgba(0, 0, 0, 0.7); /* Fundo escurecido */
     transition: background-color 0.9s;
     cursor: pointer;
-    z-index: 1102;
+    z-index: 0;
 }
 
 .logo-next {
@@ -414,7 +414,7 @@ body {
 
 .carousel-control-prev,
 .carousel-control-next {
-    z-index: 1100; 
+    z-index: 1104; 
 }
 
 
@@ -510,7 +510,7 @@ video {
     }
 
     .navbar-toggler {
-        z-index: 1203;
+        z-index: 1103;
     }
 
     .message {
@@ -589,6 +589,9 @@ video {
     
     
 @media (max-width: 992px) {
+    .overlay{
+        z-index: 0;
+    }
     .navbar-nav {
         flex-direction: column; /* Muda a direção para coluna em telas menores */
         align-items: flex-start; /* Alinha à esquerda */
@@ -599,7 +602,7 @@ video {
     }
 
     .navbar{
-        z-index: 1100;
+        z-index: 1106;
     }
 
     .login a {
@@ -638,11 +641,16 @@ video {
     }
 
     .carousel-indicators {
-        bottom: 50px; /* Ajusta a posição dos indicadores mais para cima */
+        bottom: 50px;
+        z-index: 1106; /* Ajusta a posição dos indicadores mais para cima */
     }
 
 
 @media (max-width: 1200px) {
+
+    .overlay{
+        z-index: 0;
+    }
     .message {
         font-size: 1.6rem;
         margin-bottom: 90px;
@@ -657,7 +665,7 @@ video {
     }
 
     .navbar{
-        z-index: 1100;
+        z-index: 1105;
     }
 
 
@@ -690,10 +698,18 @@ video {
 }}
 
 @media (max-width: 1400px) {
+    .overlay{
+        z-index: 0;
+    }
+
     .message {
         width: 100%;
         font-size: 1.6rem;
         margin-bottom: 70px;
+    }
+
+    .navbar-nav{
+        z-index: 1106;
     }
 
     .logo img{
@@ -729,4 +745,9 @@ video {
     .carousel-indicators {
         bottom: 50px; /* Ajusta a posição dos indicadores mais para cima */
     }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+    z-index: 1104; 
+}
 }
