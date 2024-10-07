@@ -53,9 +53,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   }
 
-  // Evento de clique na card de Eventos
+  // Função para abrir o modal
+  function openModal() {
+    document.getElementById("videoModal").style.display = "block";
+  }
+
+  // Função para fechar o modal
+  function closeModal() {
+    document.getElementById("videoModal").style.display = "none";
+  }
+
+  // Adiciona evento de clique ao card
   const eventCard = document.getElementById("eventCard");
-  eventCard.addEventListener("click", showCronometro);
+  eventCard.addEventListener("click", function () {
+    showCronometro(); // Chame essa função se necessário
+    openModal(); // Abra o modal ao clicar no card
+  });
 
   // Desativa o scroll inicial
   document.body.classList.add("noscroll");
@@ -115,9 +128,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-// Função para mostrar o cronômetro
-function showCronometro() {
-  const cronometro = document.getElementById("cronometro");
-  cronometro.classList.remove("d-none"); // Remove a classe que esconde o cronômetro
-}

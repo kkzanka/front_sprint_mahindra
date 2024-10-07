@@ -194,11 +194,20 @@
             </div>
         </div>
         
-        <div class="card" onclick="location.href='#bastidores';">
+        <div class="card" id="eventCard">
             <img src="assets/img/bastidores.jpg" alt="Bastidores da Race Week" class="card-img">
             <div class="card-overlay"></div>
             <div class="card-content">
                 <h3>Bastidores da Race Week</h3>
+            </div>
+        </div>
+        <div id="videoModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <video controls autoplay>
+                    <source src="assets/videos/bastidores.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
             </div>
         </div>
         <div class="card" onclick="location.href='#ingresso';">
