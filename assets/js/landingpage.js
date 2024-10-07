@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
         remainingTime = parseInt(savedTime, 10);
     }
 
+
+
+
+
+
     // Atualiza o cronômetro na tela
     function updateCronometro() {
         const dias = Math.floor(remainingTime / (24 * 60 * 60));
@@ -106,4 +111,13 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.add('noscroll');
         }
     });
+    function showCronometro() {
+        // Seleciona o cronômetro
+        var cronometro = document.getElementById('cronometro');
+        
+        // Remove a classe 'd-none' para mostrar o cronômetro
+        cronometro.classList.remove('d-none');
+        
+        // Adiciona lógica para ocultar os outros cards, se necessário
+    }
 });
